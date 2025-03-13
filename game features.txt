@@ -1,0 +1,85 @@
+musts:
+-start scherm
+	-startknop
+    -start met keuze uit modifiers
+-kamers
+	-boss room
+		-2 bosses
+	-normale kamer
+		-drie kamers
+	-treasure room
+    -shop
+		-upgrades
+			-water spuit
+				-dikte
+				-lengte
+				-damage
+			-"armor"
+				-defence
+				-durability
+				-loop snelheid
+			-"modifier"
+				-cursed
+				-normal
+
+-currency
+
+-healing
+	-frikandel broodje
+		-kan x aantal mee nemen als in diablo iv
+	-sauceizen broodje
+		-kan niet oppakken healt als je er over heen loopt (healt minder dan frikandel broodje)
+
+-gameplay
+	-einde kamer
+		-healing(del broodje)
+		
+-player
+	-armor
+		-durability
+		-denfence
+		-loop snelheid
+	-spuit
+		-dikte
+		-lengte
+		-damage
+		
+-enemies
+	-fire sprite
+		-hp:
+		-damage:
+	-vuurwerk schieter
+		-hp:
+		-damage:
+	-vlammenwerper
+		-hp:
+		-damage:
+		
+	-bosses
+		-lava monster
+			-meelee damage:
+			-ranged damage:
+			-hp:
+			-snelheid:
+			-mechanic
+				-lava ballen schiet
+				-vallende lava
+		-robot
+			-meelee damage:
+			-ranged damage:
+			-hp:
+			-snelheid:
+			-mechanic
+				-2 states
+					-normal
+					-electrified
+
+coulds:
+-difficulty
+-boss
+-meer kamers
+-meer bosses
+-meer enemies
+-verschillende armor
+-upgrades
+	-thorns(water spuit) "could"
