@@ -2,6 +2,12 @@ musts:
 -start scherm
 	-startknop
     -start met keuze uit modifiers
+-eind scherm
+	-stats
+		-enemies killed
+		-bosses killed
+		-money spend
+		-kamers bezocht
 -kamers
 	-boss room
 		-2 bosses
@@ -20,9 +26,16 @@ musts:
 				-loop snelheid
 			-"modifier"
 				-cursed
+					-smg water
+						-damage / 10
+						-spuit word smg met hoge spread
 				-normal
+					-hp * x
+					-defence * x
+					-snelheid * x
 
 -currency
+	-[funny idee]
 
 -healing
 	-frikandel broodje
@@ -36,15 +49,16 @@ musts:
 		
 -player
 	-armor
-		-durability
-		-denfence
-		-loop snelheid
+		-durability:
+		-denfence:
+		-loop snelheid: 1
 	-spuit
-		-dikte
-		-lengte
-		-damage
+		-dikte:
+		-lengte:
+		-damage:
 		
 -enemies
+	-sterker per boss(als treasure room dan niet)
 	-fire sprite
 		-hp:
 		-damage:
