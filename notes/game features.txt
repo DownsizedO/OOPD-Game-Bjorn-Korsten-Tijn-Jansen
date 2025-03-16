@@ -1,6 +1,11 @@
 musts:
 -start scherm
 	-startknop
+		-unlimited mode
+		-win condition
+			-x aantal bosses
+			-x aantal kamers
+			-x aantal enemies
     -start met keuze uit modifiers
 -eind scherm
 	-stats
@@ -48,6 +53,8 @@ musts:
 		-healing(del broodje)
 		
 -player
+	-abilities(krijg je van bosses)
+		-
 	-armor
 		-durability:
 		-denfence:
@@ -97,3 +104,4 @@ coulds:
 -verschillende armor
 -upgrades
 	-thorns(water spuit) "could"
+-water ballon grenade
