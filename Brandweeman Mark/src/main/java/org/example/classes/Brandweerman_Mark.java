@@ -1,4 +1,4 @@
-package org.example;
+package org.example.classes;
 
 import com.github.hanyaeger.api.YaegerGame;
 
