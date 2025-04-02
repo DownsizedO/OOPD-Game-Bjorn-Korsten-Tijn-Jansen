@@ -2,7 +2,10 @@ package com.github.hanyaeger.Brandweerman_Mark.entities.enemies.boss;
 
 public class Robot extends Boss {
 
-    @Override
+    public Robot(int health, int damage, int speed, int defense) {
+        super(health, damage, speed, defense);
+    }
+
     public void stateSwitch() {}
 
     @Override
