@@ -8,4 +8,5 @@ module brandweermanMark {
     opens backgrounds;
     opens sprites;
     opens player_sprites;
+    opens rooms;
 }

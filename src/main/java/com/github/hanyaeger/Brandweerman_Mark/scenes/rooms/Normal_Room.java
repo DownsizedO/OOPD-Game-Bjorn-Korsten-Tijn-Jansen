@@ -1,5 +1,6 @@
 package com.github.hanyaeger.Brandweerman_Mark.scenes.rooms;
 
+import com.github.hanyaeger.Brandweerman_Mark.Game;
 import com.github.hanyaeger.Brandweerman_Mark.entities.player.Player;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.entities.impl.DynamicTextEntity;
@@ -16,6 +17,12 @@ import java.util.Set;
 public class Normal_Room extends DynamicScene implements KeyListener {
 
     private TextEntity player;
+    private Game game;
+
+    public Normal_Room(Game game)
+    {
+        this.game = game;
+    }
 
     @Override
     public void setupScene() {

@@ -14,29 +14,31 @@ public class Door extends DynamicSpriteEntity implements MouseButtonPressedListe
     private YaegerGame game;
 
 
-    private static int kamer = 0;
+
+
 
     public Door(Coordinate2D position) {
-        super("room/door.png", position);
+        super("rooms/door.png", position);
         this.game = game;
 
-    }
 
+    }
 
 
     public void goToNextRoom() {
-        kamer++;
-        game.setActiveScene(kamer);
+        Game.kamer++;
+        game.setActiveScene(Game.kamer);
     }
+
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        if(Rooms.checkEnemiesDefeated()){
-        goToNextRoom();
+        if (Rooms.checkEnemiesDefeated()) {
+            goToNextRoom();
 
         }
     }
-    public static int getKamer() {
-        return kamer;
-    }
+
+
+
 }
 

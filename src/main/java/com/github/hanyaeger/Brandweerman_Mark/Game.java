@@ -19,14 +19,9 @@ public class Game extends YaegerGame {
     private Player _player;
     private int ronde;
     private int winst_level;
-    private static int kamer = 0;
+    public static int kamer = 1;
 
-    public int getKamer() {
-        return kamer;
-    }
-    public void setKamer(int kamer) {
-        kamer = kamer;
-    }
+
 
     public static void main(String[] args) {
         launch(args);
@@ -45,7 +40,7 @@ public class Game extends YaegerGame {
         endScreen = new Eindscherm(this);
 
         addScene(0, startScreen);
-        addScene(1, new Normal_Room());
+        addScene(1, new Normal_Room(this));
         addScene(2, endScreen);
     }
 
@@ -64,5 +59,12 @@ public class Game extends YaegerGame {
 
     public List<Rooms> getRooms() {
         return rooms;
+    }
+
+    public int getKamer() {
+        return kamer;
+    }
+    public void setKamer(int kamer) {
+        kamer = kamer;
     }
 }
