@@ -6,4 +6,5 @@ module brandweermanMark {
     opens audio;
     opens backgrounds;
     opens sprites;
+    opens player_sprites;
 }
