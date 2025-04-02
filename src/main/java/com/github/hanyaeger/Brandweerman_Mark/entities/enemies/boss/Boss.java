@@ -1,15 +1,19 @@
 package com.github.hanyaeger.Brandweerman_Mark.entities.enemies.boss;
-import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.Enemy;
-
 
 import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.Enemy;
 
-public abstract class Boss extends Enemy {
+public class Boss extends Enemy {
 
-    protected int hp;
-    protected int damage;
-    protected int speed;
-    protected int gold;
+    public Boss(int health, int damage, int speed, int defense) {
+        super(health, damage, speed, defense);
+    }
 
-    public abstract void stateSwitch();
+    // Implementeer de abstracte methode 'aanval' van de Enemy klasse
+    @Override
+    public void aanval() {
+
+    }
+    public void beweeg() {
+
+    }
 }
