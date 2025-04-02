@@ -1,5 +1,7 @@
 package com.github.hanyaeger.Brandweerman_Mark.scenes.menus;
 
+import com.github.hanyaeger.Brandweerman_Mark.Game;
+import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Door;
 import com.github.hanyaeger.api.scenes.StaticScene;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
@@ -53,10 +55,8 @@ public class Startscherm extends StaticScene {
 
         @Override
         public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate) {
-            if (mouseButton == MouseButton.PRIMARY) {
-                // Zorg ervoor dat je de game start wanneer de startknop wordt ingedrukt
-                game.setActiveScene(1);
-            }
+                Door.goToNextRoom();
+
         }
     }
 }

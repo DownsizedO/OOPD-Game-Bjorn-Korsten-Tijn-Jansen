@@ -7,12 +7,14 @@ public abstract class Enemy implements Entity {
     protected int damage;
     protected int speed;
     protected int gold;
+    protected boolean isLevend;
 
     public Enemy(int hp, int damage, int speed, int gold) {
         this.hp = hp;
         this.damage = damage;
         this.speed = speed;
         this.gold = gold;
+        this.isLevend = true;
     }
 
 
@@ -42,5 +44,9 @@ public abstract class Enemy implements Entity {
 
     public int getGold() {
         return gold;
+    }
+
+    public boolean getisLevend(){
+       return isLevend;
     }
 }

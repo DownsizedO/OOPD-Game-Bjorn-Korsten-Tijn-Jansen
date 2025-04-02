@@ -19,10 +19,21 @@ public class Game extends YaegerGame {
     private Player _player;
     private int ronde;
     private int winst_level;
+    private static int kamer = 0;
+
+    public int getKamer() {
+        return kamer;
+    }
+    public void setKamer(int kamer) {
+        kamer = kamer;
+    }
 
     public static void main(String[] args) {
         launch(args);
     }
+
+
+
 
     @Override
     public void setupGame() {
