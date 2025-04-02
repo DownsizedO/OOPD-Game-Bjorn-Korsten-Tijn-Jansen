@@ -1,5 +1,7 @@
 package com.github.hanyaeger.Brandweerman_Mark.entities.player;
 
+
+
 public class Water_Gun {
 
     private int damage;

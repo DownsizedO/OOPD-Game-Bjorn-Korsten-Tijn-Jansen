@@ -1,7 +1,19 @@
+package com.github.hanyaeger.Brandweerman_Mark.entities.player;
+
+import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import com.github.hanyaeger.api.userinput.KeyListener;
+import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.YaegerGame;
+
+import java.util.Set;
+import javafx.scene.input.KeyCode;
+
+import com.github.hanyaeger.Brandweerman_Mark.entities.Entity;
+import com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_Gun;
+
 public class Player extends DynamicSpriteEntity implements Entity, KeyListener {
 
     private Water_Gun waterGun;
-    private List<Abilities> abilities;
     private int speed;
     private int speed_boost;
     private int gold;

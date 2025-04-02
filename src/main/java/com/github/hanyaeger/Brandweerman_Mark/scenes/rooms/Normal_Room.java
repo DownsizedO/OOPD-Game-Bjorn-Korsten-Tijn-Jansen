@@ -1,6 +1,7 @@
 package com.github.hanyaeger.Brandweerman_Mark.scenes.rooms;
 
 import java.util.List;
+import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.Enemy;
 
 public class Normal_Room extends Rooms {
 

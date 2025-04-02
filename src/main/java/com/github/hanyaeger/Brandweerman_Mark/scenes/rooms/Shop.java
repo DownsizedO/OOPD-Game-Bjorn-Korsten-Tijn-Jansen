@@ -1,6 +1,7 @@
 package com.github.hanyaeger.Brandweerman_Mark.scenes.rooms;
 
 import java.util.List;
+import com.github.hanyaeger.Brandweerman_Mark.entities.upgrades.Upgrade;
 
 public class Shop extends Rooms {
 

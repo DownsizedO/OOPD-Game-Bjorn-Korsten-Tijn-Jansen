@@ -1,8 +1,60 @@
 package com.github.hanyaeger.Brandweerman_Mark.scenes.menus;
 
-public class Startscherm {
+import com.github.hanyaeger.api.scenes.StaticScene;
+import com.github.hanyaeger.api.entities.impl.TextEntity;
 
-    private boolean game_started;
+import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
+import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.YaegerGame;
+import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
-    public void startgame() {}
+public class Startscherm extends StaticScene {
+
+    private boolean game_started = false;
+    private YaegerGame game;
+
+    public Startscherm(YaegerGame game) {
+        this.game = game;
+    }
+
+    @Override
+    public void setupScene() {
+        setBackgroundColor(Color.LIGHTBLUE);
+    }
+
+    @Override
+    public void setupEntities() {
+        TextEntity titel = new TextEntity(new Coordinate2D(250, 150), "Brandweerman Mark");
+        titel.setFont(Font.font("Arial", FontWeight.BOLD, 32));
+        titel.setFill(Color.DARKRED);
+
+        StartButton startKnop = new StartButton(new Coordinate2D(300, 300), game);
+
+        addEntity(titel);
+        addEntity(startKnop);
+    }
+
+    public void startgame() {
+        game_started = true;
+        game.setActiveScene(1); // Naar eerste kamer (Normal_Room bijv.)
+    }
+
+    private class StartButton extends TextEntity implements MouseButtonPressedListener {
+        private YaegerGame game;
+
+        public StartButton(Coordinate2D position, YaegerGame game) {
+            super(position, "Start Spel");
+            this.game = game;
+            setFill(Color.DARKBLUE);
+            setFont(Font.font("Arial", FontWeight.BOLD, 24));
+        }
+
+        @Override
+        public void onMouseButtonPressed(MouseButtonPressedListener button, Coordinate2D coordinate2D) {
+            ((Startscherm) game.getCurrentScene()).startgame();
+        }
+    }
 }

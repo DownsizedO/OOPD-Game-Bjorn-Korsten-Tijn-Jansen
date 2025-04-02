@@ -1,6 +1,7 @@
 package com.github.hanyaeger.Brandweerman_Mark.entities.enemies;
+import com.github.hanyaeger.Brandweerman_Mark.entities.Entity;
 
-public abstract class Enemy extends Entity {
+public abstract class Enemy implements Entity {
 
     protected int hp;
     protected int damage;

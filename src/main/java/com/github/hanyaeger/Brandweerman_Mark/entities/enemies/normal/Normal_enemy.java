@@ -1,4 +1,5 @@
 package com.github.hanyaeger.Brandweerman_Mark.entities.enemies.normal;
+import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.Enemy;
 
 public abstract class Normal_enemy extends Enemy {
 
