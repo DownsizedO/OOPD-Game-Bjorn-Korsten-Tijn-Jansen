@@ -7,7 +7,7 @@ typically a Scene that contains animated Entities, we are going to extend a
 ![Edit](images/edit.png) Add a scene called `GameLevel`, which extends
 `DynamicScene`, to the `com.github.hanyaeger.tutorial.scenes`
 package. Use the method `setupScene()` to set the background to the
-asset `background2.jpg` and the audio to `waterworld.mp3`.
+asset `background2.jpg` and the audio to `brandweermanMark.mp3`.
 
 At this moment the level has not yet been added to the game. You have only
 created a new class, that needs to be instantiated and added to
@@ -71,10 +71,10 @@ instance of `Waterworld` to the `StartButton` and then call
 ![Edit](images/edit.png) Change the constructor of `TitleScene` to
 
 ```java
-private Waterworld waterworld;
+private Waterworld brandweermanMark;
 
-public TitleScene(Waterworld waterworld){
-    this.waterworld = waterworld;
+public TitleScene(Waterworld brandweermanMark){
+    this.brandweermanMark = brandweermanMark;
 }
 ```
 
@@ -99,7 +99,7 @@ handler:
 ```java
 @Override
 public void onMouseButtonPressed(MouseButton button, Coordinate2D coordinate2D){
-    waterworld.setActiveScene(1);
+    brandweermanMark.setActiveScene(1);
 }
 ```
 

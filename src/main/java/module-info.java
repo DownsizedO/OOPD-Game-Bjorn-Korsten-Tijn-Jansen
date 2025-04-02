@@ -1,4 +1,4 @@
-module waterworld {
+module brandweermanMark {
     requires hanyaeger;
 
     exports com.github.hanyaeger.tutorial;

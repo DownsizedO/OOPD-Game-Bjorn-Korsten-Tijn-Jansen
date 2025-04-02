@@ -126,7 +126,7 @@ Exception:
 
 ```text
 Caused by: java.lang.IllegalAccessException: class com.github.hanyaeger.core.factories.TileFactory (in module hanyaeger) cannot access class com.
-github.hanyaeger.tutorial.entities.map.Coral (in module waterworld) because module waterworld does not export com.github.hanyaeger.tutorial.entities.map to module hanyaeger
+github.hanyaeger.tutorial.entities.map.Coral (in module brandweermanMark) because module brandweermanMark does not export com.github.hanyaeger.tutorial.entities.map to module hanyaeger
 	at java.base/jdk.internal.reflect.Reflection.newIllegalAccessException(Reflection.java:376)
 	at java.base/java.lang.reflect.AccessibleObject.checkAccess(AccessibleObject.java:647)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:490)

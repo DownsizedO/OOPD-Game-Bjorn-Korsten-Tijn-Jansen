@@ -4,7 +4,7 @@ import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.scenes.StaticScene;
-import com.github.hanyaeger.tutorial.Waterworld;
+import com.github.hanyaeger.tutorial.Brandweerman_Mark;
 import com.github.hanyaeger.tutorial.entities.buttons.StartButton;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -12,10 +12,10 @@ import javafx.scene.text.FontWeight;
 
 public class TitleScene extends StaticScene {
 
-    private Waterworld waterworld;
+    private Brandweerman_Mark brandweermanMark;
 
-    public TitleScene(Waterworld waterworld){
-        this.waterworld = waterworld;
+    public TitleScene(Brandweerman_Mark brandweermanMark){
+        this.brandweermanMark = brandweermanMark;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class TitleScene extends StaticScene {
 
 
         var StartButton = new StartButton(
-                new Coordinate2D(getWidth()/2, getHeight() - 500), "start", waterworld
+                new Coordinate2D(getWidth()/2, getHeight() - 500), "start", brandweermanMark
         );
         StartButton.setAnchorPoint(AnchorPoint.CENTER_CENTER);
         StartButton.setFill(Color.BLUE);

@@ -235,7 +235,7 @@ public void onCollision(List<Collider> collidingObject) {
         healthText.setText(--health);
 
         if (health == 0) {
-            this.waterworld.setActiveScene(2);
+            this.brandweermanMark.setActiveScene(2);
         } else {
             setAnchorLocation(new Coordinate2D(
                 new Random().nextInt((int) (getSceneWidth() - getWidth())),

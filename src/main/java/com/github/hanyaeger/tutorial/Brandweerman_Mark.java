@@ -1,13 +1,11 @@
 package com.github.hanyaeger.tutorial;
 
-import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.Size;
 import com.github.hanyaeger.api.YaegerGame;
-import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.tutorial.scenes.GameLevel;
 import com.github.hanyaeger.tutorial.scenes.TitleScene;
 
-public class Waterworld extends YaegerGame {
+public class Brandweerman_Mark extends YaegerGame {
     public static void main(String[] args){
         launch(args);
     }

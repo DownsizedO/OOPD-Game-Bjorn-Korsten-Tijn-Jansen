@@ -5,7 +5,7 @@ import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
 import com.github.hanyaeger.api.userinput.MouseEnterListener;
 import com.github.hanyaeger.api.userinput.MouseExitListener;
-import com.github.hanyaeger.tutorial.Waterworld;
+import com.github.hanyaeger.tutorial.Brandweerman_Mark;
 import javafx.scene.Cursor;
 import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
@@ -17,12 +17,12 @@ import javafx.scene.text.FontWeight;
 public class StartButton extends TextEntity implements MouseButtonPressedListener, MouseEnterListener, MouseExitListener
 {
 
-    private Waterworld waterworld;
+    private Brandweerman_Mark brandweermanMark;
 
-    public StartButton(Coordinate2D initialLocation, String start, Waterworld waterworld)
+    public StartButton(Coordinate2D initialLocation, String start, Brandweerman_Mark brandweermanMark)
     {
         super(initialLocation, "Play game");
-        this.waterworld = waterworld;
+        this.brandweermanMark = brandweermanMark;
         setFill(Color.PURPLE);
         setFont(Font.font("Roboto", FontWeight.BOLD, 100));
 
@@ -30,7 +30,7 @@ public class StartButton extends TextEntity implements MouseButtonPressedListene
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        waterworld.setActiveScene(1);
+        brandweermanMark.setActiveScene(1);
     }
 
     @Override
