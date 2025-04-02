@@ -1,4 +1,4 @@
-package com.github.hanyaeger.Brandweerman_Mark.entities.player.modifiers.normal;
+package com.github.hanyaeger.Brandweerman_Mark.entities.player.modifiers;
 
 public class Schade_Bonus extends Normaal {
 
