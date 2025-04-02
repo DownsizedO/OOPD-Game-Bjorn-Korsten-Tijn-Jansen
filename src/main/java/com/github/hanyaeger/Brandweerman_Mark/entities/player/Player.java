@@ -26,8 +26,40 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener {
     }
 
     @Override
-    public void beweeg() {}
+    public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
+        int Movement_Speed = 8;
 
+        if(pressedKeys.contains(KeyCode.A) || pressedKeys.contains(KeyCode.LEFT)){
+            if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP))
+            {
+                setMotion(Movement_Speed, 225d);
+            }else if(pressedKeys.contains(KeyCode.S) || pressedKeys.contains(KeyCode.DOWN))
+            {
+                setMotion(Movement_Speed, 315);
+
+            }else{setMotion(Movement_Speed, 270d);}
+        } else if(pressedKeys.contains(KeyCode.D) || pressedKeys.contains(KeyCode.RIGHT))
+        {
+            if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP))
+            {
+                setMotion(Movement_Speed, 135);
+            }else if(pressedKeys.contains(KeyCode.S) || pressedKeys.contains(KeyCode.DOWN)){
+                setMotion(Movement_Speed, 45);
+            }
+            else{
+                setMotion(Movement_Speed,90d);
+            }} else if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP))
+        {
+            setMotion(Movement_Speed,180d);
+        } else if(pressedKeys.contains(KeyCode.S) || pressedKeys.contains(KeyCode.DOWN)){
+            setMotion(Movement_Speed,0d);
+        }
+        else if(pressedKeys.isEmpty()){
+            setSpeed(0);
+        }
+
+
+    }
     @Override
     public void aanval() {}
 
@@ -44,6 +76,4 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener {
         return 0;
     }
 
-    @Override
-    public void onPressedKeysChange(Set<KeyCode> set) {}
-}
+    }

@@ -15,7 +15,7 @@ public abstract class Enemy implements Entity {
         this.gold = gold;
     }
 
-    @Override
+
     public abstract void beweeg();
 
     @Override
