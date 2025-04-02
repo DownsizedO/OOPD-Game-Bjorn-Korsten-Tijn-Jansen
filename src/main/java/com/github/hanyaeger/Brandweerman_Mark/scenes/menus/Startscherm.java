@@ -55,7 +55,7 @@ public class Startscherm extends StaticScene {
 
         @Override
         public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate) {
-                Door.goToNextRoom();
+                game.setActiveScene(1);
 
         }
     }

@@ -33,8 +33,6 @@ public class Game extends YaegerGame {
     }
 
 
-
-
     @Override
     public void setupGame() {
         setGameTitle("Brandweerman Mark");

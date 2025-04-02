@@ -16,7 +16,7 @@ import java.util.List;
 
 import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Door;
 
-public class Rooms extends DynamicScene implements MouseButtonPressedListener {
+public abstract class Rooms extends DynamicScene implements MouseButtonPressedListener {
 
     private int roomWidth = 960;
     private int roomHeight = 720;
@@ -43,6 +43,16 @@ public class Rooms extends DynamicScene implements MouseButtonPressedListener {
     private void setupDoor() {
     var door = new Door(new Coordinate2D(roomWidth - 50, roomHeight - 50));
     addEntity(door);
+    }
+
+    public void On_Enter()
+    {
+
+    }
+
+    public void On_Exit()
+    {
+
     }
 
 

@@ -9,6 +9,7 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.Set;
 
@@ -27,7 +28,8 @@ public class Normal_Room extends DynamicScene implements KeyListener {
 
     @Override
     public void setupEntities() {
-
+        var door = new Door(new Coordinate2D(100, 100));
+        addEntity(door);
     }
 
     @Override
