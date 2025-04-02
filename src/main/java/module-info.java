@@ -1,7 +1,7 @@
 module brandweermanMark {
     requires hanyaeger;
 
-    exports com.github.hanyaeger.tutorial;
+    exports com.github.hanyaeger.Brandweerman_Mark;
 
     opens audio;
     opens backgrounds;

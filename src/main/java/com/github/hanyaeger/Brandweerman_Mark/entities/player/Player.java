@@ -21,6 +21,9 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener {
     private int defense;
     private int hp;
     private int max_hp;
+    public Player(String spritePath, Coordinate2D coordinate) {
+        super(spritePath, coordinate);
+    }
 
     @Override
     public void beweeg() {}
