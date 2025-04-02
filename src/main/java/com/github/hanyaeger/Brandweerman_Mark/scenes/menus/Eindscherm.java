@@ -13,12 +13,12 @@ public class Eindscherm extends StaticScene {
     }
 
     @Override
-    protected void setupScene() {
+    public void setupScene() {
         setBackgroundColor(Color.DARKRED); // Je kunt de kleur veranderen
     }
 
     @Override
-    protected void setupEntities() {
+    public void setupEntities() {
         // Voeg hier je entities toe (bijv. tekst of knoppen)
     }
 

@@ -25,18 +25,18 @@ public class Game extends YaegerGame {
     }
 
     @Override
-    protected void setupGame() {
+    public void setupGame() {
         setGameTitle("Brandweerman Mark");
-        setSize(new Size(800, 600));
+        setSize(new Size(960, 720));
     }
 
     @Override
-    protected void setupScenes() {
+    public void setupScenes() {
         startScreen = new Startscherm(this);
         endScreen = new Eindscherm(this);
 
         addScene(0, startScreen);
-        addScene(1, new Normal_Room(this));
+        addScene(1, new Normal_Room());
         addScene(2, endScreen);
     }
 
