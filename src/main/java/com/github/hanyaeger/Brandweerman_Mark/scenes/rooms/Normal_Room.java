@@ -39,12 +39,15 @@ public class Normal_Room extends DynamicScene implements KeyListener {
     @Override
     public void setupScene() {
         setBackgroundColor(Color.LIGHTGREEN);
-        var player = new Player(new Coordinate2D(200, 200));
-        addEntity(player);
+
     }
 
     @Override
     public void setupEntities() {
+        var player = new Player(new Coordinate2D(200, 200));
+        addEntity(player);
+        var water_gun = new Water_Gun(player.playerCoords(), game);
+        addEntity(water_gun);
         var door = new Door(new Coordinate2D(100, 100), game);
         addEntity(door);
         var vuur_sprite1 = new Vuur_Sprite(new Coordinate2D(100, 100), 10, 5, game);
@@ -53,8 +56,10 @@ public class Normal_Room extends DynamicScene implements KeyListener {
         addEntity(vuur_sprite2);
         var vuur_sprite3 = new Vuur_Sprite(new Coordinate2D(300, 200), 10, 5, game);
         addEntity(vuur_sprite3);
-        var bullet = new WaterStream(new Coordinate2D(100, 100), 90);
-        addEntity(bullet);
+        if(Water_Gun.isGeschoten()){
+            var waterstream = new WaterStream(water_gun.GunCoords(), 90);
+            addEntity(waterstream);
+        }
         spawnEnemies(enemy_aantal);
 
 

@@ -13,26 +13,27 @@ import javafx.scene.input.MouseButton;
 import java.util.Set;
 
 
-public class Water_Gun extends DynamicSpriteEntity implements MouseButtonPressedListener, MouseButtonReleasedListener {
+public class Water_Gun extends DynamicSpriteEntity implements MouseButtonPressedListener, MouseButtonReleasedListener, KeyListener {
 
     private YaegerGame game;
     Coordinate2D coordinate;
-    public boolean geschoten;
-    public Water_Gun(Coordinate2D position, YaegerGame game, boolean geschoten) {
+    public static boolean geschoten;
+    public Water_Gun(Coordinate2D position, YaegerGame game) {
         super("player_sprites/watergun.png", position); // Zet hier de juiste sprite voor de watergun
         this.game = game;
         this.coordinate = position;
-        this.geschoten = false;
     }
 
 
     public void shoot(float direction) {
-        com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.WaterStream waterStream = new com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.WaterStream(coordinate, direction);
-        //Normal_Room.shot();
+        com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.WaterStream waterStream = new com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.WaterStream(getLocationInScene(), direction);
+
+    }
+    public Coordinate2D GunCoords(){
+       return getLocationInScene();
     }
 
-
-    public boolean isGeschoten() {
+    public static boolean isGeschoten() {
         return geschoten;
     }
 
@@ -45,5 +46,43 @@ public class Water_Gun extends DynamicSpriteEntity implements MouseButtonPressed
     @Override
     public void onMouseButtonReleased(MouseButton mouseButton, Coordinate2D coordinate2D) {
         geschoten = false;
+    }
+
+    @Override
+    public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
+        int Movement_Speed = 8;
+
+        if(pressedKeys.contains(KeyCode.A) || pressedKeys.contains(KeyCode.LEFT)){
+            if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP))
+            {
+                setMotion(Movement_Speed, 225d);
+            }else if(pressedKeys.contains(KeyCode.S) || pressedKeys.contains(KeyCode.DOWN))
+            {
+                setMotion(Movement_Speed, 315);
+
+            }else{setMotion(Movement_Speed, 270d);}
+        } else if(pressedKeys.contains(KeyCode.D) || pressedKeys.contains(KeyCode.RIGHT))
+        {
+            if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP))
+            {
+                setMotion(Movement_Speed, 135);
+            }else if(pressedKeys.contains(KeyCode.S) || pressedKeys.contains(KeyCode.DOWN)){
+                setMotion(Movement_Speed, 45);
+            }
+            else{
+                setMotion(Movement_Speed,90d);
+            }} else if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP))
+        {
+            setMotion(Movement_Speed,180d);
+        } else if(pressedKeys.contains(KeyCode.S) || pressedKeys.contains(KeyCode.DOWN)){
+            setMotion(Movement_Speed,0d);
+        }
+        else if(pressedKeys.isEmpty()){
+            setSpeed(0);
+        }
+        if (pressedKeys.contains(KeyCode.SPACE)) {
+            Coordinate2D start = coordinate;
+            // Water_Gun.shoot(90);
+        }
     }
 }
