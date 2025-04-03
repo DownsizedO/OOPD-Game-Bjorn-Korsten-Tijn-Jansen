@@ -1,6 +1,7 @@
 module brandweermanMark {
     requires hanyaeger;
     requires org.checkerframework.checker.qual;
+    requires com.google.errorprone.annotations;
 
     exports com.github.hanyaeger.Brandweerman_Mark;
 
