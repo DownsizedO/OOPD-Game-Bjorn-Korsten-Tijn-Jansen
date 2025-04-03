@@ -46,10 +46,10 @@ public class Game extends YaegerGame {
         endScreen = new Eindscherm(this);
 
         addScene(0, startScreen);
-        addScene(1, new Normal_Room(this));  // Normale kamer
-        addScene(2, new Normal_Room(this));  // Normale kamer 2
-        addScene(3, new Normal_Room(this));  // Normale kamer 3
-        addScene(4, new Normal_Room(this));  // Normale kamer 4
+        addScene(1, new Normal_Room(this, 3));  // Normale kamer
+        addScene(2, new Normal_Room(this, 5));  // Normale kamer 2
+        addScene(3, new Normal_Room(this,7));  // Normale kamer 3
+        addScene(4, new Normal_Room(this, 9));  // Normale kamer 4
         addScene(5, new Boss_Room(this));  // Boss kamer
         addScene(6, new Treasure_Room( this));  // Treasure kamer
         addScene(100, endScreen);

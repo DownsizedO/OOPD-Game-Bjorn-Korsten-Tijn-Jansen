@@ -1,10 +1,12 @@
 package com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun;
 
 import com.github.hanyaeger.api.YaegerGame;
+import com.github.hanyaeger.api.entities.Collided;
+import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.Coordinate2D;
 
-public class WaterStream extends DynamicSpriteEntity {
+public class WaterStream extends DynamicSpriteEntity implements Collider {
     YaegerGame game;
     private double speed = 10;
     private double direction;

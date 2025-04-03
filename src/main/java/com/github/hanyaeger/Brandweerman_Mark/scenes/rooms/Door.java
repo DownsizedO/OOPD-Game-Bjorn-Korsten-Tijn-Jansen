@@ -30,16 +30,16 @@ public class Door extends DynamicSpriteEntity implements MouseButtonPressedListe
         int typeKamer = (Game.kamer % 6) + 1;
         switch (typeKamer) {
             case 1:
-                game.addScene(Game.kamer+6, new Normal_Room((Game) game));  // Normale kamer
+                game.addScene(Game.kamer+6, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer
                 break;
             case 2:
-                game.addScene(Game.kamer+6, new Normal_Room((Game) game));  // Normale kamer 2
+                game.addScene(Game.kamer+6, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer 2
                 break;
             case 3:
-                game.addScene(Game.kamer+6, new Normal_Room((Game) game));  // Normale kamer 3
+                game.addScene(Game.kamer+6, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer 3
                 break;
             case 4:
-                game.addScene(Game.kamer+6, new Normal_Room((Game) game));  // Normale kamer 4
+                game.addScene(Game.kamer+6, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer 4
                 break;
             case 5:
                 game.addScene(Game.kamer+6, new Boss_Room((Game) game));  // Boss kamer
