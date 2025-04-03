@@ -1,5 +1,8 @@
 package com.github.hanyaeger.Brandweerman_Mark;
 
+import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Boss_Room;
+import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Treasure_Room;
+import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.Size;
 
@@ -22,7 +25,6 @@ public class Game extends YaegerGame {
     public static int kamer = 1;
 
 
-
     public static void main(String[] args) {
         launch(args);
     }
@@ -32,16 +34,24 @@ public class Game extends YaegerGame {
     public void setupGame() {
         setGameTitle("Brandweerman Mark");
         setSize(new Size(960, 720));
+
+
     }
 
     @Override
     public void setupScenes() {
+
         startScreen = new Startscherm(this);
         endScreen = new Eindscherm(this);
 
         addScene(0, startScreen);
-        addScene(1, new Normal_Room(this));
-        addScene(2, endScreen);
+        addScene(1, new Normal_Room(this));  // Normale kamer
+        addScene(2, new Normal_Room(this));  // Normale kamer 2
+        addScene(3, new Normal_Room(this));  // Normale kamer 3
+        addScene(4, new Normal_Room(this));  // Normale kamer 4
+        addScene(5, new Boss_Room(this));  // Boss kamer
+        addScene(6, new Treasure_Room( this));  // Treasure kamer
+        addScene(100, endScreen);
     }
 
     public Player getPlayer() {

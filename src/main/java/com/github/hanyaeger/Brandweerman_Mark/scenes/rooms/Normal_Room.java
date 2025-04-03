@@ -22,20 +22,19 @@ public class Normal_Room extends DynamicScene implements KeyListener {
     public Normal_Room(Game game)
     {
         this.game = game;
+
     }
 
     @Override
     public void setupScene() {
         setBackgroundColor(Color.LIGHTGREEN);
-
-        // Voeg de speler toe aan de kamer
         var player = new Player(new Coordinate2D(200, 200));
         addEntity(player);
     }
 
     @Override
     public void setupEntities() {
-        var door = new Door(new Coordinate2D(100, 100));
+        var door = new Door(new Coordinate2D(100, 100), game);
         addEntity(door);
     }
 
