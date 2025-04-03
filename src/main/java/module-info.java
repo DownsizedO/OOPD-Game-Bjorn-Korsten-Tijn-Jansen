@@ -2,6 +2,7 @@ module brandweermanMark {
     requires hanyaeger;
     requires org.checkerframework.checker.qual;
     requires com.google.errorprone.annotations;
+    requires jdk.sctp;
 
     exports com.github.hanyaeger.Brandweerman_Mark;
 

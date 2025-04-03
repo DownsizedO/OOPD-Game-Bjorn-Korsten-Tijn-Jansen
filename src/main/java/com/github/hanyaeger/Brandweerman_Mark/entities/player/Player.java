@@ -2,8 +2,9 @@ package com.github.hanyaeger.Brandweerman_Mark.entities.player;
 
 import com.github.hanyaeger.Brandweerman_Mark.Game;
 import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.Enemy;
-import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.Normal_Enemy;
+
 import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.normal.Vuur_Sprite;
+import com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.WaterStream;
 import com.github.hanyaeger.api.AnchorPoint;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.Collided;
@@ -15,10 +16,14 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.api.Coordinate2D;
 import java.util.List;
 import java.util.Set;
+
+import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
+import com.github.hanyaeger.api.userinput.MouseMovedListener;
 import javafx.scene.input.KeyCode;
 import com.github.hanyaeger.Brandweerman_Mark.entities.Entity;
+import javafx.scene.input.MouseButton;
 
-public class Player extends DynamicSpriteEntity implements Entity, KeyListener, Collider, Collided, SceneBorderTouchingWatcher {
+public class Player extends DynamicSpriteEntity implements Entity, KeyListener, Collider, Collided, SceneBorderTouchingWatcher, MouseMovedListener, MouseButtonPressedListener {
 
     private Saucijzen_Broodje Saucijzen_Broodje;
     private static int speed;
@@ -29,6 +34,7 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
     private static int hp;
     private static int max_hp;
     private YaegerGame game;
+    public boolean mousepressed;
 
 
     public Coordinate2D coordinate;
@@ -128,5 +134,15 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
     }
     public Coordinate2D playerCoords(){
         return getLocationInScene();
+    }
+
+    @Override
+    public void onMouseMoved(Coordinate2D coordinate2D) {
+
+    }
+
+    @Override
+    public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
+        mousepressed = true;
     }
 }

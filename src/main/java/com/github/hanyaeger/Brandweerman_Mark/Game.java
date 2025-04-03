@@ -1,16 +1,17 @@
 package com.github.hanyaeger.Brandweerman_Mark;
 
+import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.normal.Vuur_Sprite;
 import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Boss_Room;
 import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Treasure_Room;
-import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.YaegerGame;
-import com.github.hanyaeger.api.Size;
+import com.github.hanyaeger.api.*;
 
 import com.github.hanyaeger.Brandweerman_Mark.scenes.menus.Startscherm;
 import com.github.hanyaeger.Brandweerman_Mark.scenes.menus.Eindscherm;
 import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Normal_Room;
 import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Rooms;
 import com.github.hanyaeger.Brandweerman_Mark.entities.player.Player;
+import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.normal.Vuur_Sprite;
+import com.github.hanyaeger.api.scenes.DynamicScene;
 
 import java.util.List;
 
@@ -78,4 +79,5 @@ public class Game extends YaegerGame {
     public void setKamer(int kamer) {
         kamer = kamer;
     }
+
 }
