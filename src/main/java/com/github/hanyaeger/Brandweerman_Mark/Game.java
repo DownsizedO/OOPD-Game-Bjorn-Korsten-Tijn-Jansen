@@ -1,8 +1,6 @@
 package com.github.hanyaeger.Brandweerman_Mark;
 
-import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.normal.Vuur_Sprite;
 import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Boss_Room;
-import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Treasure_Room;
 import com.github.hanyaeger.api.*;
 
 import com.github.hanyaeger.Brandweerman_Mark.scenes.menus.Startscherm;
@@ -10,8 +8,6 @@ import com.github.hanyaeger.Brandweerman_Mark.scenes.menus.Eindscherm;
 import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Normal_Room;
 import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Rooms;
 import com.github.hanyaeger.Brandweerman_Mark.entities.player.Player;
-import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.normal.Vuur_Sprite;
-import com.github.hanyaeger.api.scenes.DynamicScene;
 
 import java.util.List;
 
@@ -52,7 +48,6 @@ public class Game extends YaegerGame {
         addScene(3, new Normal_Room(this,7));  // Normale kamer 3
         addScene(4, new Normal_Room(this, 9));  // Normale kamer 4
         addScene(5, new Boss_Room(this));  // Boss kamer
-        addScene(6, new Treasure_Room( this));  // Treasure kamer
         addScene(100, endScreen);
     }
 

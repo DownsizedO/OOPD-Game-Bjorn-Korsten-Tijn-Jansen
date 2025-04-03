@@ -35,17 +35,20 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
     private static int max_hp;
     private YaegerGame game;
     public boolean mousepressed;
+    public static Coordinate2D currentcoords;
 
 
     public Coordinate2D coordinate;
     public Player(Coordinate2D coordinate) {
         super("player_sprites/brandweerman_mark.png", coordinate);
         this.game = game;
+        this.hp = 10;
     }
 
     @Override
     public void onPressedKeysChange(Set<KeyCode> pressedKeys) {
         int Movement_Speed = 8;
+        currentcoords = getLocationInScene();
 
         if(pressedKeys.contains(KeyCode.A) || pressedKeys.contains(KeyCode.LEFT)){
             if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP))
@@ -77,9 +80,7 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
         }
         if (pressedKeys.contains(KeyCode.SPACE)) {
             Coordinate2D start = coordinate;
-           // Water_Gun.shoot(90);
         }
-//start, getRotation(), 4 ,4
 
     }
     @Override
@@ -99,18 +100,8 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
     }
 
     public Coordinate2D getCoordinate() {
-        return coordinate;
+        return currentcoords;
     }
-
-    @Override
-    public void onCollision(List<Collider> collisions) {
-
-        for(Collider Enemy: collisions){
-            hp--;
-            System.out.println("collision");
-        }
-    }
-
     @Override
     public void notifyBoundaryTouching(SceneBorder sceneBorder) {
         setSpeed(0);
@@ -144,5 +135,10 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
         mousepressed = true;
+    }
+
+    @Override
+    public void onCollision(List<Collider> list) {
+    Player.hp--;
     }
 }

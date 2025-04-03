@@ -105,7 +105,7 @@ public class Normal_Room extends DynamicScene implements KeyListener, MouseMoved
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        var waterstream = new WaterStream( water_gun.GunCoords());
+        var waterstream = new WaterStream(Player.currentcoords);
         addEntity(waterstream);
     }
 }

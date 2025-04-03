@@ -23,18 +23,14 @@ public class Startscherm extends StaticScene {
 
     @Override
     public void setupScene() {
-        setBackgroundImage("rooms/titlescreen");
+        setBackgroundImage("rooms/titlescreen.png");
     }
 
     @Override
     public void setupEntities() {
-        TextEntity titel = new TextEntity(new Coordinate2D(250, 150), "Brandweerman Mark");
-        titel.setFont(Font.font("Arial", FontWeight.BOLD, 32));
-        titel.setFill(Color.DARKRED);
 
-        StartButton startKnop = new StartButton(new Coordinate2D(300, 300), game);
 
-        addEntity(titel);
+        StartButton startKnop = new StartButton(new Coordinate2D(100, 100), game);
         addEntity(startKnop);
     }
 
