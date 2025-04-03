@@ -1,4 +1,4 @@
-package com.github.hanyaeger.Brandweerman_Mark.entities.enemies;
+package com.github.hanyaeger.Brandweerman_Mark.entities.enemies.normal;
 
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;

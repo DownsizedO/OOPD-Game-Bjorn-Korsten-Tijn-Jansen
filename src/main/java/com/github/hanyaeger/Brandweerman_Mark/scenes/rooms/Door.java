@@ -2,6 +2,7 @@ package com.github.hanyaeger.Brandweerman_Mark.scenes.rooms;
 
 import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.boss.Lava_Monster;
 import com.github.hanyaeger.Brandweerman_Mark.entities.player.Player;
+import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicRectangleEntity;
 import com.github.hanyaeger.api.Coordinate2D;
@@ -12,8 +13,10 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
 import com.github.hanyaeger.Brandweerman_Mark.Game;
 
+import java.util.List;
 
-public class Door extends DynamicSpriteEntity implements MouseButtonPressedListener, Collider {
+
+public class Door extends DynamicSpriteEntity implements Collider, Collided {
 
     private YaegerGame game;
 
@@ -55,15 +58,17 @@ public class Door extends DynamicSpriteEntity implements MouseButtonPressedListe
         RoomGeneration();
     }
 
+
+
+
     @Override
-    public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        if (Rooms.checkEnemiesDefeated()) {
+    public void onCollision(List<Collider> list) {
+        if(Normal_Room.enemiesList.isEmpty())
+        {
             goToNextRoom();
-
+            System.out.println("penis");
         }
+        System.out.println("penis");
     }
-
-
-
 }
 

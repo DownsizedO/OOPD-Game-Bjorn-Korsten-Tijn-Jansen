@@ -5,17 +5,20 @@ import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.userinput.MouseMovedListener;
 
-public class WaterStream extends DynamicSpriteEntity implements Collider {
+public class WaterStream extends DynamicSpriteEntity implements Collider, MouseMovedListener {
     YaegerGame game;
     private double speed = 10;
-    private double direction;
 
 
-    public WaterStream(Coordinate2D position, double direction) {
+    public WaterStream(Coordinate2D position) {
         super("player_sprites/bullet.png", position);
-        this.direction = direction;
-        setMotion(speed, direction);
         this.game = game;
+    }
+
+    @Override
+    public void onMouseMoved(Coordinate2D coordinate2D) {
+        setMotion(4, angleTo(coordinate2D));
     }
 }
