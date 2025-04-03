@@ -139,6 +139,13 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
 
     @Override
     public void onCollision(List<Collider> list) {
-    Player.hp--;
+        this.game = game;
+        if (list.get(0) instanceof Vuur_Sprite) {
+            Player.hp--;
+            System.out.println("hp-1");
+            if(hp <= 0){
+                game.setActiveScene(100);
+            }
+        }
     }
 }

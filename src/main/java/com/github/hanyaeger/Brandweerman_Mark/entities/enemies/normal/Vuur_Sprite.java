@@ -1,5 +1,6 @@
 package com.github.hanyaeger.Brandweerman_Mark.entities.enemies.normal;
 
+import com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.WaterStream;
 import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Normal_Room;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.Collided;
@@ -44,7 +45,8 @@ public class Vuur_Sprite extends DynamicSpriteEntity implements Collider, Collid
     public void onCollision(List<Collider> collisions) {
 
         if(hp > 0) {
-            for (Collider WaterStream : collisions) {
+            if(collisions.get(0) instanceof WaterStream)
+            {
                 hp--;
                 setMotion(10, random.nextInt(359));
                 System.out.println("enemy collided with player");
@@ -76,16 +78,16 @@ public class Vuur_Sprite extends DynamicSpriteEntity implements Collider, Collid
 
         switch(sceneBorder){
             case TOP:
-                setAnchorLocationY(1);
+                setAnchorLocationY(3);
                 break;
             case BOTTOM:
-                setAnchorLocationY(getSceneHeight() - getHeight() - 1);
+                setAnchorLocationY(getSceneHeight() - getHeight() - 3);
                 break;
             case LEFT:
-                setAnchorLocationX(1);
+                setAnchorLocationX(3);
                 break;
             case RIGHT:
-                setAnchorLocationX(getSceneWidth() - getWidth() - 1);
+                setAnchorLocationX(getSceneWidth() - getWidth() - 3);
             default:
                 break;
         }

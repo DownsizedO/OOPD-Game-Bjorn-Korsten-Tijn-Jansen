@@ -1,6 +1,5 @@
 package com.github.hanyaeger.Brandweerman_Mark;
 
-import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Boss_Room;
 import com.github.hanyaeger.api.*;
 
 import com.github.hanyaeger.Brandweerman_Mark.scenes.menus.Startscherm;
@@ -40,15 +39,14 @@ public class Game extends YaegerGame {
     public void setupScenes() {
 
         startScreen = new Startscherm(this);
-        endScreen = new Eindscherm(this);
+        endScreen = new Eindscherm(game);
 
         addScene(0, startScreen);
         addScene(1, new Normal_Room(this, 3));  // Normale kamer
         addScene(2, new Normal_Room(this, 5));  // Normale kamer 2
         addScene(3, new Normal_Room(this,7));  // Normale kamer 3
         addScene(4, new Normal_Room(this, 9));  // Normale kamer 4
-        addScene(5, new Boss_Room(this));  // Boss kamer
-        addScene(100, endScreen);
+         addScene(100, endScreen);
     }
 
     public Player getPlayer() {
