@@ -23,7 +23,7 @@ public class Startscherm extends StaticScene {
 
     @Override
     public void setupScene() {
-        setBackgroundColor(Color.LIGHTBLUE);
+        setBackgroundImage("rooms/titlescreen");
     }
 
     @Override

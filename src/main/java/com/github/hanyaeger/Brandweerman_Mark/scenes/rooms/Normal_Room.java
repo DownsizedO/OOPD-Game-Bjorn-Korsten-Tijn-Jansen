@@ -32,7 +32,7 @@ public class Normal_Room extends DynamicScene implements KeyListener, MouseMoved
     Random random2 = new Random();
     Random random3 = new Random();
     private int direction;
-
+    public Water_Gun water_gun;
 
     public Normal_Room(Game game, int enemy_aantal)
     {
@@ -58,11 +58,10 @@ public class Normal_Room extends DynamicScene implements KeyListener, MouseMoved
         addEntity(water_gun);
         var door = new Door(new Coordinate2D(100, 100), game);
         addEntity(door);
-        if(player.mousepressed){
-            var waterstream = new WaterStream(water_gun.GunCoords());
-            addEntity(waterstream);
-            player.mousepressed = false;
-        }
+        //TextEntity titel = new TextEntity(new Coordinate2D(getWidth()/2, getHeight()-50), toString(Player.hp));
+
+
+
 
         spawnEnemies(enemy_aantal);
 
@@ -106,7 +105,7 @@ public class Normal_Room extends DynamicScene implements KeyListener, MouseMoved
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        var waterstream = new WaterStream(GunCoords());
+        var waterstream = new WaterStream( water_gun.GunCoords());
         addEntity(waterstream);
     }
 }
