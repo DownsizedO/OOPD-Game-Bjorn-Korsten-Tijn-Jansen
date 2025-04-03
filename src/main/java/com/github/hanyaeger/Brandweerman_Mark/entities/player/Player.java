@@ -124,5 +124,9 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
             default:
                 break;
         }
+
+    }
+    public Coordinate2D playerCoords(){
+        return getLocationInScene();
     }
 }
