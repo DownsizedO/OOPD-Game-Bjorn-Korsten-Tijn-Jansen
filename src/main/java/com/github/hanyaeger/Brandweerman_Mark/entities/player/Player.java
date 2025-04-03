@@ -2,25 +2,28 @@ package com.github.hanyaeger.Brandweerman_Mark.entities.player;
 
 import com.github.hanyaeger.Brandweerman_Mark.Game;
 import com.github.hanyaeger.api.YaegerGame;
+import com.github.hanyaeger.api.entities.Collided;
+import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.Water_Gun;
 
+import java.util.List;
 import java.util.Set;
 import javafx.scene.input.KeyCode;
 import com.github.hanyaeger.Brandweerman_Mark.entities.Entity;
 
-public class Player extends DynamicSpriteEntity implements Entity, KeyListener {
+public class Player extends DynamicSpriteEntity implements Entity, KeyListener, Collider, Collided {
 
     private Saucijzen_Broodje Saucijzen_Broodje;
-    private int speed;
-    private int speed_boost;
-    private int gold;
-    private int damage;
-    private int defense;
-    private int hp;
-    private int max_hp;
+    private static int speed;
+    private static int speed_boost;
+    private static int gold;
+    private static int damage;
+    private static int defense;
+    private static int hp;
+    private static int max_hp;
     private YaegerGame game;
 
 
@@ -88,4 +91,10 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener {
     public Coordinate2D getCoordinate() {
         return coordinate;
     }
+
+    @Override
+    public void onCollision(List<Collider> list) {
+        System.out.println("collision");
+
     }
+}

@@ -2,6 +2,7 @@ package com.github.hanyaeger.Brandweerman_Mark.scenes.rooms;
 
 import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.boss.Lava_Monster;
 import com.github.hanyaeger.Brandweerman_Mark.entities.player.Player;
+import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicRectangleEntity;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
@@ -12,7 +13,7 @@ import javafx.scene.paint.Color;
 import com.github.hanyaeger.Brandweerman_Mark.Game;
 
 
-public class Door extends DynamicSpriteEntity implements MouseButtonPressedListener {
+public class Door extends DynamicSpriteEntity implements MouseButtonPressedListener, Collider {
 
     private YaegerGame game;
 
