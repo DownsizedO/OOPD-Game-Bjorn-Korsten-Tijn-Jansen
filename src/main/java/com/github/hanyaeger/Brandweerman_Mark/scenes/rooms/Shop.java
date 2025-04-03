@@ -3,25 +3,30 @@ package com.github.hanyaeger.Brandweerman_Mark.scenes.rooms;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.github.hanyaeger.Brandweerman_Mark.Game;
 import com.github.hanyaeger.Brandweerman_Mark.entities.player.Player;
 import com.github.hanyaeger.Brandweerman_Mark.entities.upgrades.Upgrade;
 import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Rooms;
+import com.github.hanyaeger.api.YaegerGame;
+import com.github.hanyaeger.api.scenes.DynamicScene;
+import com.github.hanyaeger.api.userinput.KeyListener;
 
 
 
-public class Shop extends Rooms {
+public class Shop extends DynamicScene {
 
-    public Shop(String roomName, Player player) {
-        super(roomName, player);
+    private Game game;
+
+    public Shop(Game game) {
+        this.game = game;  // Sla de Game instantie op
     }
 
-    private ArrayList<Upgrade> upgrades = new ArrayList<Upgrade>();
-
-
+    @Override
+    public void setupScene() {
+    }
 
     @Override
-    public void On_Enter() {}
+    public void setupEntities() {
 
-    @Override
-    public void On_Exit() {}
+    }
 }

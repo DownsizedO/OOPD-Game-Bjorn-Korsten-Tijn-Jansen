@@ -40,7 +40,7 @@ public class Startscherm extends StaticScene {
 
     public void startgame() {
         game_started = true;
-        game.setActiveScene(1); // Naar eerste kamer (Normal_Room bijv.)
+        game.setActiveScene(1);
     }
 
     private class StartButton extends TextEntity implements MouseButtonPressedListener {

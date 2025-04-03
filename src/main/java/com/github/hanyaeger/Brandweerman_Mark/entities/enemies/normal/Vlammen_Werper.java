@@ -1,16 +1,20 @@
 package com.github.hanyaeger.Brandweerman_Mark.entities.enemies.normal;
 
-public class Vlammen_Werper extends Normal_enemy {
 
-    public Vlammen_Werper(int health, int damage, int speed, int defense) {
-        super(health, damage, speed, defense);
+import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
+
+import javafx.scene.input.MouseButton;
+
+public class Vlammen_Werper extends DynamicSpriteEntity implements MouseButtonPressedListener {
+
+    protected Vlammen_Werper(String resource, Coordinate2D initialLocation) {
+        super(resource, initialLocation);
     }
-    @Override
-    public void aanval() {}
 
     @Override
-    public void beweeg() {}
+    public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
 
-    @Override
-    public void Neem_Schade(int schade) {}
+    }
 }

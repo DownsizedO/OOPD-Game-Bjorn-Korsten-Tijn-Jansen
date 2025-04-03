@@ -2,6 +2,7 @@ package com.github.hanyaeger.Brandweerman_Mark.scenes.rooms;
 
 
 import com.github.hanyaeger.Brandweerman_Mark.Game;
+import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
@@ -25,13 +26,12 @@ public abstract class Rooms extends DynamicScene implements MouseButtonPressedLi
     private List<Enemy> enemies;  // Lijst van vijanden in de kamer
     private boolean allEnemiesDefeated = false;
     public static boolean kamerKlaar = false;
-
+    private YaegerGame game;
     public static ArrayList<Enemy> enemiesInRoom = new ArrayList<Enemy>();
 
-    public Rooms(String roomName, Player player) {
-        this.roomName = roomName;
-        this.player = player;
-        this.enemies = new ArrayList<>();
+    public Rooms(YaegerGame game) {
+   //     this.enemies = new ArrayList<>();
+        this.game = game;
     }
 
     @Override
@@ -41,7 +41,7 @@ public abstract class Rooms extends DynamicScene implements MouseButtonPressedLi
     }
 
     private void setupDoor() {
-    var door = new Door(new Coordinate2D(roomWidth - 50, roomHeight - 50));
+    var door = new Door(new Coordinate2D(roomWidth - 50, roomHeight - 50), game);
     addEntity(door);
     }
 

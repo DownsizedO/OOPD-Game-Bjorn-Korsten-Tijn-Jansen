@@ -1,20 +1,26 @@
 package com.github.hanyaeger.Brandweerman_Mark.scenes.rooms;
 
+import com.github.hanyaeger.Brandweerman_Mark.Game;
 import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.boss.Boss;
 import com.github.hanyaeger.Brandweerman_Mark.entities.player.Player;
+import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 
-public class Boss_Room extends Rooms {
 
-    private Boss boss;
+public class Boss_Room extends DynamicScene {
 
-    public Boss_Room(String roomName, Player player) {
-        super(roomName, player);
+    private Game game;
+
+    public Boss_Room(Game game) {
+        this.game = game;  // Sla de Game instantie op
     }
 
     @Override
-    public void On_Enter() {}
+    public void setupScene() {
+    }
 
     @Override
-    public void On_Exit() {}
+    public void setupEntities() {
+
+    }
 }

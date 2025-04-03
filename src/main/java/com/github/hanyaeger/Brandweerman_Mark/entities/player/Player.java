@@ -1,19 +1,19 @@
 package com.github.hanyaeger.Brandweerman_Mark.entities.player;
 
+import com.github.hanyaeger.Brandweerman_Mark.Game;
+import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.YaegerGame;
+import com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.Water_Gun;
 
 import java.util.Set;
 import javafx.scene.input.KeyCode;
-
 import com.github.hanyaeger.Brandweerman_Mark.entities.Entity;
-import com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_Gun;
 
 public class Player extends DynamicSpriteEntity implements Entity, KeyListener {
 
-    private Water_Gun waterGun;
+    private Saucijzen_Broodje Saucijzen_Broodje;
     private int speed;
     private int speed_boost;
     private int gold;
@@ -21,8 +21,13 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener {
     private int defense;
     private int hp;
     private int max_hp;
+    private YaegerGame game;
+
+
+    public Coordinate2D coordinate;
     public Player(Coordinate2D coordinate) {
         super("player_sprites/brandweerman_mark.png", coordinate);
+        this.game = game;
     }
 
     @Override
@@ -57,7 +62,11 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener {
         else if(pressedKeys.isEmpty()){
             setSpeed(0);
         }
-
+        if (pressedKeys.contains(KeyCode.SPACE)) {
+            Coordinate2D start = coordinate;
+           // Water_Gun.shoot(90);
+        }
+//start, getRotation(), 4 ,4
 
     }
     @Override
@@ -76,4 +85,7 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener {
         return 0;
     }
 
+    public Coordinate2D getCoordinate() {
+        return coordinate;
+    }
     }
