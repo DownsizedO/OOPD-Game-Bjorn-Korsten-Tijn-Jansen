@@ -31,7 +31,7 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
     private static int gold;
     private static int damage;
     private static int defense;
-    private static int hp;
+    public static int hp;
     private static int max_hp;
     private YaegerGame game;
     public boolean mousepressed;
