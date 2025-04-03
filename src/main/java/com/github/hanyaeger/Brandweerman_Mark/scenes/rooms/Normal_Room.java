@@ -52,11 +52,11 @@ public class Normal_Room extends DynamicScene implements KeyListener, MouseMoved
 
     @Override
     public void setupEntities() {
-        var player = new Player(new Coordinate2D(0, 0));
+        var player = new Player(new Coordinate2D(0, 0), game);
         addEntity(player);
         var water_gun = new Water_Gun(player.playerCoords(), game);
         addEntity(water_gun);
-        var door = new Door(new Coordinate2D(100, 100), game);
+        var door = new Door(new Coordinate2D(getWidth() - 20, getHeight()/2), game);
         addEntity(door);
         //TextEntity titel = new TextEntity(new Coordinate2D(getWidth()/2, getHeight()-50), toString(Player.hp));
 

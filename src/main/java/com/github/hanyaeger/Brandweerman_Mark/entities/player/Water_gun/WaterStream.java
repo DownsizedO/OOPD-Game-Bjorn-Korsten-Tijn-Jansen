@@ -19,6 +19,6 @@ public class WaterStream extends DynamicSpriteEntity implements Collider, MouseM
 
     @Override
     public void onMouseMoved(Coordinate2D coordinate2D) {
-        setMotion(4, angleTo(coordinate2D));
+        setMotion(10, angleTo(coordinate2D));
     }
 }

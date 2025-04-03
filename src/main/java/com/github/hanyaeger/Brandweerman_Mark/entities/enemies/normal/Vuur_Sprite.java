@@ -1,5 +1,6 @@
 package com.github.hanyaeger.Brandweerman_Mark.entities.enemies.normal;
 
+import com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.WaterStream;
 import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Normal_Room;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.Collided;
@@ -36,56 +37,57 @@ public class Vuur_Sprite extends DynamicSpriteEntity implements Collider, Collid
         this.hp = hp;
         this.dmg = dmg;
         this.game = game;
-        move =true;
+        move = true;
 
     }
 
     @Override
     public void onCollision(List<Collider> collisions) {
 
-        if(hp > 0) {
-            for (Collider WaterStream : collisions) {
-                hp--;
-                setMotion(10, random.nextInt(359));
-                System.out.println("enemy collided with player");
+        if (hp > 0) {
+            collisions.forEach(collider -> {
+                if (collider instanceof WaterStream) {
 
-            }
-        }else {
+                    hp = hp - 100;
+                    setMotion(10, random.nextInt(359));
+                    System.out.println("enemy collided with player");
+                    if (hp <= 0) {
+                        Normal_Room.enemiesList.remove(Normal_Room.enemiesList.get(0));
+                        remove();
+
+                    }
+                }
+            });
+        } else {
             Normal_Room.enemiesList.remove(Normal_Room.enemiesList.get(0));
             remove();
         }
-
-
-
-
     }
 
-    public void beweeg(){
+    public void beweeg() {
         int timer = 1000;
-        if(timer <= 1)
-        {
+        if (timer <= 1) {
             setMotion(3, random.nextInt(359));
             timer = 1000;
-        }
-        else
-            timer--;
+        } else timer--;
     }
+
     @Override
     public void notifyBoundaryTouching(SceneBorder sceneBorder) {
         setSpeed(0);
 
-        switch(sceneBorder){
+        switch (sceneBorder) {
             case TOP:
-                setAnchorLocationY(1);
+                setAnchorLocationY(3);
                 break;
             case BOTTOM:
-                setAnchorLocationY(getSceneHeight() - getHeight() - 1);
+                setAnchorLocationY(getSceneHeight() - getHeight() - 3);
                 break;
             case LEFT:
-                setAnchorLocationX(1);
+                setAnchorLocationX(3);
                 break;
             case RIGHT:
-                setAnchorLocationX(getSceneWidth() - getWidth() - 1);
+                setAnchorLocationX(getSceneWidth() - getWidth() - 3);
             default:
                 break;
         }
