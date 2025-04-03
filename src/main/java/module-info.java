@@ -9,4 +9,6 @@ module brandweermanMark {
     opens sprites;
     opens player_sprites;
     opens rooms;
+    opens enemy_sprites;
+    opens modifier_sprites;
 }

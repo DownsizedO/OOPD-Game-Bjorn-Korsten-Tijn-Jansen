@@ -23,6 +23,7 @@ public class Game extends YaegerGame {
     private int ronde;
     private int winst_level;
     public static int kamer = 1;
+    private YaegerGame game;
 
 
     public static void main(String[] args) {

@@ -2,6 +2,9 @@ package com.github.hanyaeger.Brandweerman_Mark.scenes.rooms;
 
 import com.github.hanyaeger.Brandweerman_Mark.Game;
 import com.github.hanyaeger.Brandweerman_Mark.entities.player.Player;
+import com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.WaterStream;
+import com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.Water_Gun;
+import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.entities.impl.DynamicTextEntity;
 import com.github.hanyaeger.api.scenes.DynamicScene;
@@ -17,7 +20,7 @@ import java.util.Set;
 public class Normal_Room extends DynamicScene implements KeyListener {
 
     private TextEntity player;
-    private Game game;
+    private YaegerGame game;
 
     public Normal_Room(Game game)
     {
@@ -36,6 +39,10 @@ public class Normal_Room extends DynamicScene implements KeyListener {
     public void setupEntities() {
         var door = new Door(new Coordinate2D(100, 100), game);
         addEntity(door);
+        var bullet = new WaterStream(new Coordinate2D(100, 100), 90);
+        addEntity(bullet);
+//        if(Water_Gun.isGeschoten()){ addEntity(bullet);}
+//        else{}
     }
 
     @Override
