@@ -39,7 +39,7 @@ public class Game extends YaegerGame {
     public void setupScenes() {
 
         startScreen = new Startscherm(this);
-        endScreen = new Eindscherm(game);
+        endScreen = new Eindscherm(this);
 
         addScene(0, startScreen);
         addScene(1, new Normal_Room(this, 3));  // Normale kamer

@@ -40,19 +40,20 @@ public class Eindscherm extends StaticScene {
     }
 
     private class StartButton extends TextEntity implements MouseButtonPressedListener {
-        private YaegerGame game;
+        private YaegerGame game2;
 
-        public StartButton(Coordinate2D position, YaegerGame game) {
-            super(position, "Opnieuw spelen");
-            this.game = game;
+        public StartButton(Coordinate2D position, YaegerGame game2) {
+            super(position, "Exit");
+            this.game2 = game2;
             setFill(Color.DARKBLUE);
             setFont(Font.font("Arial", FontWeight.BOLD, 24));
+
         }
 
         @Override
         public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate) {
-            game.setActiveScene(1);
-
+            game2.setActiveScene(1);
+            System.exit(69);
         }
     }
 }

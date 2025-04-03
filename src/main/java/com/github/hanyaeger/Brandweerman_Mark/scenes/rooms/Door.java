@@ -24,7 +24,7 @@ public class Door extends DynamicSpriteEntity implements Collider, Collided {
     }
 
     public void RoomGeneration(){
-        int typeKamer = (Game.kamer % 6) + 1;
+        int typeKamer = (Game.kamer % 4) + 1;
         switch (typeKamer) {
             case 1:
                 game.addScene(Game.kamer+4, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer

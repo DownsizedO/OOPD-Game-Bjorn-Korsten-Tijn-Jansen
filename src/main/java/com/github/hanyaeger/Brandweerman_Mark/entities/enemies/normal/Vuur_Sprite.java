@@ -37,46 +37,46 @@ public class Vuur_Sprite extends DynamicSpriteEntity implements Collider, Collid
         this.hp = hp;
         this.dmg = dmg;
         this.game = game;
-        move =true;
+        move = true;
 
     }
 
     @Override
     public void onCollision(List<Collider> collisions) {
 
-        if(hp > 0) {
-            if(collisions.get(0) instanceof WaterStream)
-            {
-                hp--;
-                setMotion(10, random.nextInt(359));
-                System.out.println("enemy collided with player");
+        if (hp > 0) {
+            collisions.forEach(collider -> {
+                if (collider instanceof WaterStream) {
 
-            }
-        }else {
+                    hp = hp - 100;
+                    setMotion(10, random.nextInt(359));
+                    System.out.println("enemy collided with player");
+                    if (hp <= 0) {
+                        Normal_Room.enemiesList.remove(Normal_Room.enemiesList.get(0));
+                        remove();
+
+                    }
+                }
+            });
+        } else {
             Normal_Room.enemiesList.remove(Normal_Room.enemiesList.get(0));
             remove();
         }
-
-
-
-
     }
 
-    public void beweeg(){
+    public void beweeg() {
         int timer = 1000;
-        if(timer <= 1)
-        {
+        if (timer <= 1) {
             setMotion(3, random.nextInt(359));
             timer = 1000;
-        }
-        else
-            timer--;
+        } else timer--;
     }
+
     @Override
     public void notifyBoundaryTouching(SceneBorder sceneBorder) {
         setSpeed(0);
 
-        switch(sceneBorder){
+        switch (sceneBorder) {
             case TOP:
                 setAnchorLocationY(3);
                 break;

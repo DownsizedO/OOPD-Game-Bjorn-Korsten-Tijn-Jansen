@@ -39,7 +39,7 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
 
 
     public Coordinate2D coordinate;
-    public Player(Coordinate2D coordinate) {
+    public Player(Coordinate2D coordinate, YaegerGame game) {
         super("player_sprites/brandweerman_mark.png", coordinate);
         this.game = game;
         this.hp = 10;
@@ -139,7 +139,6 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
 
     @Override
     public void onCollision(List<Collider> list) {
-        this.game = game;
         if (list.get(0) instanceof Vuur_Sprite) {
             Player.hp--;
             System.out.println("hp-1");
