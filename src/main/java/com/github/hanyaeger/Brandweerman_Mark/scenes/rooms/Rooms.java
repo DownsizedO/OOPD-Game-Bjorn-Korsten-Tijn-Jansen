@@ -37,7 +37,6 @@ public abstract class Rooms extends DynamicScene implements MouseButtonPressedLi
     @Override
     public void setupScene() {
         setupDoor();
-        setupEnemies();
     }
 
     private void setupDoor() {
@@ -45,36 +44,17 @@ public abstract class Rooms extends DynamicScene implements MouseButtonPressedLi
     addEntity(door);
     }
 
-    public void On_Enter()
-    {
-
-    }
-
-    public void On_Exit()
-    {
-
-    }
 
 
-    private void setupEnemies() {
-//        Enemy enemy1 = new Enemy(new Coordinate2D(200, 300));
-//        Enemy enemy2 = new Enemy(new Coordinate2D(400, 500));
-//        enemies.add(enemy1);
-//        enemies.add(enemy2);
-//        addEntity(enemy1);
-//        addEntity(enemy2);
-    }
+
+
 
     @Override
     public void setupEntities() {
         addEntity(player);
     }
 
-//    private void goToNextRoom() {
-//        if (allEnemiesDefeated) {
-//            //Game.setActiveScene(2);  // Hier zou je de juiste scene-id instellen
-//        }
-//    }
+
 
 
 

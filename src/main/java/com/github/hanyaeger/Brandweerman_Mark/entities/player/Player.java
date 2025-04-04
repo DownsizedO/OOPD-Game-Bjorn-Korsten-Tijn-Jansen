@@ -25,14 +25,8 @@ import javafx.scene.input.MouseButton;
 
 public class Player extends DynamicSpriteEntity implements Entity, KeyListener, Collider, Collided, SceneBorderTouchingWatcher, MouseMovedListener, MouseButtonPressedListener {
 
-    private Saucijzen_Broodje Saucijzen_Broodje;
-    private static int speed;
-    private static int speed_boost;
-    private static int gold;
-    private static int damage;
-    private static int defense;
+
     public static int hp;
-    private static int max_hp;
     private YaegerGame game;
     public boolean mousepressed;
     public static Coordinate2D currentcoords;
@@ -83,21 +77,7 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
         }
 
     }
-    @Override
-    public void aanval() {}
 
-    @Override
-    public void Neem_Schade(int schade) {}
-
-    @Override
-    public int getHp() {
-        return 0;
-    }
-
-    @Override
-    public int getDamage() {
-        return 0;
-    }
 
     public Coordinate2D getCoordinate() {
         return currentcoords;
@@ -146,5 +126,25 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
                 game.setActiveScene(100);
             }
         }
+    }
+
+    @Override
+    public void aanval() {
+
+    }
+
+    @Override
+    public void Neem_Schade(int schade) {
+
+    }
+
+    @Override
+    public int getHp() {
+        return 0;
+    }
+
+    @Override
+    public int getDamage() {
+        return 0;
     }
 }
