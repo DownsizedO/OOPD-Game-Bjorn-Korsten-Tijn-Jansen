@@ -22,7 +22,7 @@ import java.util.Random;
 import java.util.Set;
 
 
-public class Normal_Room extends DynamicScene implements KeyListener, MouseMovedListener, MouseButtonPressedListener {
+public class Normal_Room extends Rooms implements KeyListener, MouseMovedListener, MouseButtonPressedListener {
 
     private TextEntity player;
     private YaegerGame game;
@@ -36,7 +36,7 @@ public class Normal_Room extends DynamicScene implements KeyListener, MouseMoved
 
     public Normal_Room(Game game, int enemy_aantal)
     {
-        this.game = game;
+        super(game);
         this.enemy_aantal = enemy_aantal;
 
 
