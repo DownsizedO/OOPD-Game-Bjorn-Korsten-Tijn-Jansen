@@ -1,12 +1,12 @@
-package com.github.hanyaeger.Brandweerman_Mark;
+package com.github.hanyaeger.brandweerman_mark;
 
 import com.github.hanyaeger.api.*;
 
-import com.github.hanyaeger.Brandweerman_Mark.scenes.menus.Startscherm;
-import com.github.hanyaeger.Brandweerman_Mark.scenes.menus.Eindscherm;
-import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Normal_Room;
-import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Rooms;
-import com.github.hanyaeger.Brandweerman_Mark.entities.player.Player;
+import com.github.hanyaeger.brandweerman_mark.scenes.menus.Startscherm;
+import com.github.hanyaeger.brandweerman_mark.scenes.menus.Eindscherm;
+import com.github.hanyaeger.brandweerman_mark.scenes.rooms.Normal_Room;
+import com.github.hanyaeger.brandweerman_mark.scenes.rooms.Rooms;
+import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
 
 import java.util.List;
 

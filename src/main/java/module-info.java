@@ -4,7 +4,7 @@ module brandweermanMark {
     requires com.google.errorprone.annotations;
     requires jdk.sctp;
 
-    exports com.github.hanyaeger.Brandweerman_Mark;
+    exports com.github.hanyaeger.brandweerman_mark;
 
     opens audio;
     opens backgrounds;

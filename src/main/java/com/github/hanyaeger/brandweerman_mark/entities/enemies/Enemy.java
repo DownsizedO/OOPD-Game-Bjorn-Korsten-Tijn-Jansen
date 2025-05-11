@@ -1,7 +1,8 @@
-package com.github.hanyaeger.Brandweerman_Mark.entities.enemies;
-import com.github.hanyaeger.Brandweerman_Mark.entities.Entity;
+package com.github.hanyaeger.brandweerman_mark.entities.enemies;
+import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
+import com.github.hanyaeger.brandweerman_mark.entities.Entity;
 
-public abstract class Enemy implements Entity {
+public abstract class Enemy extends DynamicSpriteEntity implements Entity {
 
     protected int hp;
     protected int damage;
@@ -10,6 +11,7 @@ public abstract class Enemy implements Entity {
     protected boolean isLevend;
 
     public Enemy(int hp, int damage, int speed, int gold) {
+        super();
         this.hp = hp;
         this.damage = damage;
         this.speed = speed;

@@ -1,12 +1,10 @@
-package com.github.hanyaeger.Brandweerman_Mark.scenes.rooms;
+package com.github.hanyaeger.brandweerman_mark.scenes.rooms;
 
-import com.github.hanyaeger.Brandweerman_Mark.Game;
-import com.github.hanyaeger.Brandweerman_Mark.entities.player.Player;
-import com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.WaterStream;
-import com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.Water_Gun;
-import com.github.hanyaeger.api.TimerContainer;
+import com.github.hanyaeger.brandweerman_mark.Game;
+import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
+import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream;
+import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.Water_Gun;
 import com.github.hanyaeger.api.YaegerGame;
-import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.userinput.KeyListener;
@@ -15,7 +13,7 @@ import com.github.hanyaeger.api.userinput.MouseMovedListener;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
-import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.normal.Vuur_Sprite;
+import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Vuur_Sprite;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -38,6 +36,7 @@ public class Normal_Room extends Rooms implements KeyListener, MouseMovedListene
     {
         super(game);
         this.enemy_aantal = enemy_aantal;
+        this.game = game;
 
 
     }

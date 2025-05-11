@@ -1,10 +1,10 @@
-package com.github.hanyaeger.Brandweerman_Mark.scenes.menus;
+package com.github.hanyaeger.brandweerman_mark.scenes.menus;
 
-import com.github.hanyaeger.Brandweerman_Mark.scenes.menus.Button.StartButton;
+import com.github.hanyaeger.brandweerman_mark.scenes.menus.button.StartButton;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.YaegerGame;
 
-public class Startscherm extends scherm {
+public class Startscherm extends Scherm {
 
     private boolean game_started = false;
     private YaegerGame game;

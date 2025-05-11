@@ -1,6 +1,4 @@
-package com.github.hanyaeger.Brandweerman_Mark.entities;
-
-import com.github.hanyaeger.api.UpdateExposer;
+package com.github.hanyaeger.brandweerman_mark.entities;
 
 public interface Entity {
 

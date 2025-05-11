@@ -1,14 +1,14 @@
-package com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun;
+package com.github.hanyaeger.brandweerman_mark.entities.player.water_gun;
 
 import com.github.hanyaeger.api.YaegerGame;
-import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.userinput.MouseMovedListener;
 
 public class WaterStream extends DynamicSpriteEntity implements Collider, MouseMovedListener {
-    YaegerGame game;
+
+    private YaegerGame game;
     private double speed = 10;
 
 
@@ -19,6 +19,6 @@ public class WaterStream extends DynamicSpriteEntity implements Collider, MouseM
 
     @Override
     public void onMouseMoved(Coordinate2D coordinate2D) {
-        setMotion(10, angleTo(coordinate2D));
+        setMotion(speed, angleTo(coordinate2D));
     }
 }

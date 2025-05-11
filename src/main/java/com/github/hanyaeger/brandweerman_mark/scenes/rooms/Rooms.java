@@ -1,21 +1,17 @@
-package com.github.hanyaeger.Brandweerman_Mark.scenes.rooms;
+package com.github.hanyaeger.brandweerman_mark.scenes.rooms;
 
 
-import com.github.hanyaeger.Brandweerman_Mark.Game;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
 import javafx.scene.input.MouseButton;
 
-import com.github.hanyaeger.Brandweerman_Mark.entities.enemies.Enemy;
-import com.github.hanyaeger.Brandweerman_Mark.entities.player.Player;
+import com.github.hanyaeger.brandweerman_mark.entities.enemies.Enemy;
+import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Door;
 
 public abstract class Rooms extends DynamicScene implements MouseButtonPressedListener {
 

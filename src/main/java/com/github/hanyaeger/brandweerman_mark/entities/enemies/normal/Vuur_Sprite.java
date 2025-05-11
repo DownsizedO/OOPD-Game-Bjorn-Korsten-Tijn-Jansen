@@ -1,7 +1,8 @@
-package com.github.hanyaeger.Brandweerman_Mark.entities.enemies.normal;
+package com.github.hanyaeger.brandweerman_mark.entities.enemies.normal;
 
-import com.github.hanyaeger.Brandweerman_Mark.entities.player.Water_gun.WaterStream;
-import com.github.hanyaeger.Brandweerman_Mark.scenes.rooms.Normal_Room;
+import com.github.hanyaeger.brandweerman_mark.entities.enemies.Enemy;
+import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream;
+import com.github.hanyaeger.brandweerman_mark.scenes.rooms.Normal_Room;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
@@ -10,25 +11,20 @@ import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.Coordinate2D;
 
 import com.github.hanyaeger.api.scenes.SceneBorder;
-import com.github.hanyaeger.api.userinput.KeyListener;
-import com.github.hanyaeger.api.userinput.MouseMovedListener;
-import com.sun.nio.sctp.PeerAddressChangeNotification;
-import javafx.scene.input.KeyCode;
+import com.github.hanyaeger.core.Updatable;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Set;
 
-public class Vuur_Sprite extends DynamicSpriteEntity implements Collider, Collided, SceneBorderTouchingWatcher {
+public class Vuur_Sprite extends Enemy implements Collider, Collided, SceneBorderTouchingWatcher {
 
     private int hp;
     private int dmg;
-    Random random = new Random();
+    private final Random random = new Random();
     public boolean move;
 
-    ArrayList<Vuur_Sprite> enemies;
+    private ArrayList<Vuur_Sprite> enemies;
 
     private YaegerGame game;
 
@@ -64,12 +60,22 @@ public class Vuur_Sprite extends DynamicSpriteEntity implements Collider, Collid
         }
     }
 
+    @Override
+    public void checkForCollisions(List<Collider> colliders) {
+        Collided.super.checkForCollisions(colliders);
+    }
+
     public void beweeg() {
         int timer = 1000;
         if (timer <= 1) {
             setMotion(3, random.nextInt(359));
             timer = 1000;
         } else timer--;
+    }
+
+    @Override
+    public void aanval() {
+
     }
 
     @Override
@@ -93,7 +99,6 @@ public class Vuur_Sprite extends DynamicSpriteEntity implements Collider, Collid
         }
 
     }
-
 
 }
 
