@@ -13,7 +13,7 @@ import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Rooms extends DynamicScene implements MouseButtonPressedListener {
+public abstract class Room extends DynamicScene implements MouseButtonPressedListener {
 
     private int roomWidth = 960;
     private int roomHeight = 720;
@@ -23,10 +23,9 @@ public abstract class Rooms extends DynamicScene implements MouseButtonPressedLi
     private boolean allEnemiesDefeated = false;
     public static boolean kamerKlaar = false;
     private YaegerGame game;
-    public static ArrayList<Enemy> enemiesInRoom = new ArrayList<Enemy>();
+    public static ArrayList<Enemy> enemiesList = new ArrayList<Enemy>();
 
-    public Rooms(YaegerGame game) {
-   //     this.enemies = new ArrayList<>();
+    public Room() {
         this.game = game;
     }
 
@@ -56,7 +55,7 @@ public abstract class Rooms extends DynamicScene implements MouseButtonPressedLi
 
     public static boolean checkEnemiesDefeated() {
         kamerKlaar = false;
-        if(enemiesInRoom.isEmpty())
+        if(enemiesList.isEmpty())
         {
             kamerKlaar = true;
         }else{
@@ -69,4 +68,5 @@ public abstract class Rooms extends DynamicScene implements MouseButtonPressedLi
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
 
     }
+
 }

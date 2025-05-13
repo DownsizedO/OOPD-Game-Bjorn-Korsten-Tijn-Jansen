@@ -1,6 +1,7 @@
 package com.github.hanyaeger.brandweerman_mark.scenes.rooms;
 
 import com.github.hanyaeger.brandweerman_mark.Game;
+import com.github.hanyaeger.brandweerman_mark.entities.enemies.boss.Lava_Monster;
 import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
 import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream;
 import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.Water_Gun;
@@ -13,15 +14,11 @@ import com.github.hanyaeger.api.userinput.MouseMovedListener;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
-import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Vuur_Sprite;
 
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Set;
 
-
-public class Normal_Room extends Room implements KeyListener, MouseMovedListener, MouseButtonPressedListener {
-
+public class Boss_Room extends Room implements KeyListener, MouseMovedListener, MouseButtonPressedListener {
     private TextEntity player;
     private YaegerGame game;
     private int enemy_aantal;
@@ -32,14 +29,10 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
     private int direction;
     public Water_Gun water_gun;
 
-    public Normal_Room(Game game, int enemy_aantal)
-    {
+    public Boss_Room(Game game, int enemy_aantal){
         this.enemy_aantal = enemy_aantal;
         this.game = game;
-
-
     }
-
     @Override
     public void setupScene() {
         setBackgroundColor(Color.LIGHTGREEN);
@@ -48,23 +41,12 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
 
     }
 
-    @Override
-    public void setupEntities() {
-        var player = new Player(new Coordinate2D(0, 0), game);
-        addEntity(player);
-        var water_gun = new Water_Gun(player.playerCoords(), game);
-        addEntity(water_gun);
-        var door = new Door(new Coordinate2D(getWidth() - 20, getHeight()/2), game);
-        addEntity(door);
-        //TextEntity titel = new TextEntity(new Coordinate2D(getWidth()/2, getHeight()-50), toString(Player.hp));
-        spawnEnemies(enemy_aantal);
 
 
-    }
     private void spawnEnemies(int enemyCount) {
         for (int i = 0; i < enemyCount; i++) {
-            Coordinate2D spawnPosition = new Coordinate2D(Math.random() * 960, Math.random() * 720);
-            var enemy = new Vuur_Sprite(spawnPosition, 10, 10, game);
+            Coordinate2D spawnPositionBoss = new Coordinate2D(300, 300);
+            var enemy = new Lava_Monster(10, 10, spawnPositionBoss);
             Room.enemiesList.add(enemy);
             addEntity(enemy);
         }
@@ -101,6 +83,18 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
         var waterstream = new WaterStream(Player.currentcoords);
         addEntity(waterstream);
     }
-}
+    @Override
+    public void setupEntities() {
+        var player = new Player(new Coordinate2D(0, 0), game);
+        addEntity(player);
+        var water_gun = new Water_Gun(player.playerCoords(), game);
+        addEntity(water_gun);
+        var door = new Door(new Coordinate2D(getWidth() - 20, getHeight()/2), game);
+        addEntity(door);
+        //TextEntity titel = new TextEntity(new Coordinate2D(getWidth()/2, getHeight()-50), toString(Player.hp));
+        spawnEnemies(enemy_aantal);
 
+
+    }
+}
 

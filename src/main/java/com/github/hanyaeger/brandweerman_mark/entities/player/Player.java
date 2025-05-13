@@ -25,12 +25,14 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
     public boolean mousepressed;
     public static Coordinate2D currentcoords;
     public Coordinate2D coordinate;
+    private boolean isLevend = false;
+    private int damage;
 
     public Player(Coordinate2D coordinate, YaegerGame game) {
         super("player_sprites/brandweerman_mark.png", coordinate);
+        this.currentcoords = coordinate;
         this.game = game;
         this.hp = 10;
-        currentcoords = coordinate;
     }
 
     @Override
@@ -119,28 +121,29 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
             Player.hp--;
             System.out.println("hp-1");
             if(hp <= 0){
+                isLevend = false;
                 game.setActiveScene(100);
             }
         }
     }
 
-    @Override
-    public void aanval() {
-
-    }
 
     @Override
     public void Neem_Schade(int schade) {
-
+        hp -= schade;
     }
 
     @Override
     public int getHp() {
-        return 0;
+        return hp;
     }
 
     @Override
     public int getDamage() {
-        return 0;
+        return damage;
+    }
+
+    public boolean getisLevend(){
+        return isLevend;
     }
 }
