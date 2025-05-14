@@ -5,24 +5,28 @@ import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
+import com.github.hanyaeger.api.userinput.MouseMovedListener;
+import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
 import javafx.scene.input.MouseButton;
 
-public class WaterStream extends DynamicSpriteEntity implements Collider, MouseButtonPressedListener {
-
+public class WaterStream extends DynamicSpriteEntity implements Collider {
+    //, MouseMovedListener
     private YaegerGame game;
     private double speed = 10;
 
 
-    public WaterStream(Coordinate2D position ,Coordinate2D coordinate2D) {
+    public WaterStream(Coordinate2D position, Coordinate2D coordinate) {
         super("player_sprites/bullet.png", position);
         this.game = game;
-
-        angleTo(coordinate2D);
-
+        Coordinate2D speler = Player.currentcoords;
+        Coordinate2D muis = coordinate;
+        double dx = muis.getX() - speler.getX();
+        double dy = muis.getY() - speler.getY();
+        double angle = Math.toDegrees(Math.atan2(dx, dy));
+        if (angle < 0) {
+            angle += 360;
+        }
+        setMotion(speed, angle);
     }
 
-    @Override
-    public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        setMotion(speed, angleTo(coordinate2D));
-    }
 }

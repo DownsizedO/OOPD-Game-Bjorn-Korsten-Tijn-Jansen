@@ -61,7 +61,7 @@ public abstract class Room extends DynamicScene implements MouseButtonPressedLis
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate) {
         Coordinate2D muisPositie = coordinate;
-        var waterstream = new WaterStream(Player.currentcoords, muisPositie );
+        var waterstream = new WaterStream(Player.currentcoords, coordinate );
         addEntity(waterstream);
     }
 

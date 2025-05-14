@@ -17,6 +17,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
 import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Vuur_Sprite;
+import javafx.scene.shape.MoveTo;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -110,18 +111,27 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
     }
     @Override
     public void onMouseMoved(Coordinate2D coordinate2D) {
+        System.out.println("mousemoved");
         for(int i = 0; i < Room.enemiesList.size();i++){
             Room.enemiesList.get(i).setMotion(3, direction);
         }
         long nu = System.currentTimeMillis();
         if (nu - vorigeTijd >= interval) {
             vorigeTijd = nu;
-            for (Gooier_Aanval Aanval : Normal_Room.Aanvallist) {
-                addEntity(Normal_Room.Aanvallist.getFirst());
-                Normal_Room.Aanvallist.remove(Normal_Room.Aanvallist.getFirst());
+            System.out.println("Komt door de if statement heen");
+            for (Enemy enemy : Normal_Room.enemiesList) {
+                if (enemy instanceof Vuur_Gooier vuurGooier) {
+                    float y = random.nextFloat() * 360;
+                    Coordinate2D locatie = vuurGooier.getAnchorLocation();
+                    var Aanval= new Gooier_Aanval(locatie);
+                    Aanval.setMotion(3, y);
+                    addEntity(Aanval);
+                }
             }
 
         }
 
 
-} }
+
+            }
+        }

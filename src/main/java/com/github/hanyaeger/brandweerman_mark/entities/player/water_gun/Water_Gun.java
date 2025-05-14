@@ -28,11 +28,6 @@ public class Water_Gun extends DynamicSpriteEntity implements MouseButtonPressed
         this.coordinate = position;
     }
 
-
-    public void shoot(float direction) {
-        com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream waterStream = new com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream(getLocationInScene(),muiscoords);
-
-    }
     public Coordinate2D GunCoords(){
        return getLocationInScene();
     }

@@ -6,10 +6,8 @@ import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.SceneBorderTouchingWatcher;
 import com.github.hanyaeger.api.scenes.DynamicScene;
-import com.github.hanyaeger.brandweerman_mark.Game;
 import com.github.hanyaeger.brandweerman_mark.entities.enemies.Enemy;
 import com.github.hanyaeger.brandweerman_mark.scenes.rooms.Normal_Room;
-import com.github.hanyaeger.brandweerman_mark.scenes.rooms.Room;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -37,5 +35,6 @@ import java.util.Random;
            var Gooier_Aanval= new Gooier_Aanval(this.coordinate);
             Normal_Room.Aanvallist.add(Gooier_Aanval);
         }
+
     }
 
