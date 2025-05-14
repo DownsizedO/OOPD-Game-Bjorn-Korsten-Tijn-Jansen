@@ -1,6 +1,9 @@
 package com.github.hanyaeger.brandweerman_mark.scenes.rooms;
 
 import com.github.hanyaeger.brandweerman_mark.Game;
+import com.github.hanyaeger.brandweerman_mark.entities.enemies.Enemy;
+import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Gooier_Aanval;
+import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Vuur_Gooier;
 import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
 import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream;
 import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.Water_Gun;
@@ -31,6 +34,10 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
     Random random3 = new Random();
     private int direction;
     public Water_Gun water_gun;
+    long vorigeTijd;
+    long interval = 1000;
+    public static ArrayList<Gooier_Aanval> Aanvallist = new ArrayList<Gooier_Aanval>();
+
 
     public Normal_Room(Game game, int enemy_aantal)
     {
@@ -62,11 +69,19 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
 
     }
     private void spawnEnemies(int enemyCount) {
-        for (int i = 0; i < enemyCount; i++) {
+        Enemy enemy;
+            for (int i = 0; i < enemyCount; i++) {
+            int randomDirection = new Random().nextInt(3);
             Coordinate2D spawnPosition = new Coordinate2D(Math.random() * 960, Math.random() * 720);
-            var enemy = new Vuur_Sprite(spawnPosition, 10, 10, game);
+            if (randomDirection == 1) {
+                enemy = new Vuur_Sprite(spawnPosition, 10, 10, game);
+            }
+            if (randomDirection == 2) {
+               enemy = new Vuur_Gooier(spawnPosition, 10, 10, game, this);
+            } else enemy = new Vuur_Sprite(spawnPosition, 10, 10, game);
             Room.enemiesList.add(enemy);
             addEntity(enemy);
+            System.out.println(Room.enemiesList);
         }
     }
 
@@ -87,20 +102,26 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
         }
     }
 
+
+
+    @Override
+    public void onMouseButtonPressed() {
+
+    }
     @Override
     public void onMouseMoved(Coordinate2D coordinate2D) {
         for(int i = 0; i < Room.enemiesList.size();i++){
             Room.enemiesList.get(i).setMotion(3, direction);
         }
+        long nu = System.currentTimeMillis();
+        if (nu - vorigeTijd >= interval) {
+            vorigeTijd = nu;
+            for (Gooier_Aanval Aanval : Normal_Room.Aanvallist) {
+                addEntity(Normal_Room.Aanvallist.getFirst());
+                Normal_Room.Aanvallist.remove(Normal_Room.Aanvallist.getFirst());
+            }
+
+        }
 
 
-    }
-
-    @Override
-    public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        var waterstream = new WaterStream(Player.currentcoords);
-        addEntity(waterstream);
-    }
-}
-
-
+} }

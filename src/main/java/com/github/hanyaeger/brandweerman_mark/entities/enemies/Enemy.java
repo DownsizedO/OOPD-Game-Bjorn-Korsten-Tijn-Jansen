@@ -7,8 +7,6 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.brandweerman_mark.Game;
 import com.github.hanyaeger.brandweerman_mark.entities.Entity;
 import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream;
-import com.github.hanyaeger.brandweerman_mark.scenes.rooms.Boss_Room;
-import com.github.hanyaeger.brandweerman_mark.scenes.rooms.Normal_Room;
 import com.github.hanyaeger.brandweerman_mark.scenes.rooms.Room;
 
 import java.util.List;
@@ -90,12 +88,13 @@ public abstract class Enemy extends DynamicSpriteEntity implements Entity, Colli
 
                     hp = hp - 100;
                     setMotion(10, random.nextInt(359));
-                    System.out.println("enemy collided with player");
+                    System.out.println("enemy collided with bullet");
                     if (hp <= 0) {
                         Room.enemiesList.remove(Room.enemiesList.get(0));
                         remove();
 
                     }
+                    remove();//---------------------------------------
                 }
             });
         } else {

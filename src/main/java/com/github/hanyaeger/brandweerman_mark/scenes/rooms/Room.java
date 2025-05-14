@@ -5,6 +5,7 @@ import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
+import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream;
 import javafx.scene.input.MouseButton;
 
 import com.github.hanyaeger.brandweerman_mark.entities.enemies.Enemy;
@@ -39,19 +40,12 @@ public abstract class Room extends DynamicScene implements MouseButtonPressedLis
     addEntity(door);
     }
 
-
-
-
-
+    public abstract void onMouseButtonPressed();
 
     @Override
     public void setupEntities() {
         addEntity(player);
     }
-
-
-
-
 
     public static boolean checkEnemiesDefeated() {
         kamerKlaar = false;
@@ -65,8 +59,10 @@ public abstract class Room extends DynamicScene implements MouseButtonPressedLis
     }
 
     @Override
-    public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-
+    public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate) {
+        Coordinate2D muisPositie = coordinate;
+        var waterstream = new WaterStream(Player.currentcoords, muisPositie );
+        addEntity(waterstream);
     }
 
 }

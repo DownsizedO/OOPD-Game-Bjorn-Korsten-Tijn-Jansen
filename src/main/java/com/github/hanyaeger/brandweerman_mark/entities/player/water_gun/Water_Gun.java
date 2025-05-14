@@ -19,7 +19,7 @@ public class Water_Gun extends DynamicSpriteEntity implements MouseButtonPressed
     private YaegerGame game;
     private Coordinate2D coordinate;
     public static boolean geschoten;
-
+    public Coordinate2D muiscoords;
 
 
     public Water_Gun(Coordinate2D position, YaegerGame game) {
@@ -30,7 +30,7 @@ public class Water_Gun extends DynamicSpriteEntity implements MouseButtonPressed
 
 
     public void shoot(float direction) {
-        com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream waterStream = new com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream(getLocationInScene());
+        com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream waterStream = new com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream(getLocationInScene(),muiscoords);
 
     }
     public Coordinate2D GunCoords(){
@@ -43,6 +43,7 @@ public class Water_Gun extends DynamicSpriteEntity implements MouseButtonPressed
 
     @Override
     public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
+        muiscoords = coordinate2D;
         geschoten = true;
     }
 

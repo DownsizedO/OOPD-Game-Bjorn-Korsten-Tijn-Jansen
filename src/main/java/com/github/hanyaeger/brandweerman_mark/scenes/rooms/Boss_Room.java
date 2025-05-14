@@ -3,7 +3,6 @@ package com.github.hanyaeger.brandweerman_mark.scenes.rooms;
 import com.github.hanyaeger.brandweerman_mark.Game;
 import com.github.hanyaeger.brandweerman_mark.entities.enemies.boss.Lava_Monster;
 import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
-import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream;
 import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.Water_Gun;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.impl.TextEntity;
@@ -12,7 +11,6 @@ import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
 import com.github.hanyaeger.api.userinput.MouseMovedListener;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
 
 import java.util.Random;
@@ -79,9 +77,8 @@ public class Boss_Room extends Room implements KeyListener, MouseMovedListener, 
     }
 
     @Override
-    public void onMouseButtonPressed(MouseButton mouseButton, Coordinate2D coordinate2D) {
-        var waterstream = new WaterStream(Player.currentcoords);
-        addEntity(waterstream);
+    public void onMouseButtonPressed() {
+
     }
     @Override
     public void setupEntities() {

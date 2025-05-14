@@ -24,19 +24,19 @@ public class Door extends DynamicSpriteEntity implements Collider, Collided {
 
         switch (typeKamer) {
             case 1:
-                game.addScene(Game.kamer +5, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer
+                game.addScene(Game.kamer +4, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer
                 break;
             case 2:
-                game.addScene(Game.kamer+5, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer 2
+                game.addScene(Game.kamer+4, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer 2
                 break;
             case 3:
-                game.addScene(Game.kamer+5, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer 3
+                game.addScene(Game.kamer+4, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer 3
                 break;
             case 4:
-                game.addScene(Game.kamer+5, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer 4
+                game.addScene(Game.kamer+4, new Normal_Room((Game) game, (Game.kamer *2)));  // Normale kamer 4
                 break;
             case 5:
-                game.addScene(Game.kamer+5, new Boss_Room((Game) game, (1)));  // boss room
+                game.addScene(Game.kamer+4, new Boss_Room((Game) game, (1)));  // boss room
                 break;
         }
         Game.kamer+=1;
