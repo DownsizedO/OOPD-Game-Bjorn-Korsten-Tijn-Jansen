@@ -121,7 +121,7 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
                 if (enemy instanceof Vuur_Gooier vuurGooier) {
                     float y = random.nextFloat() * 360;
                     Coordinate2D locatie = vuurGooier.getAnchorLocation();
-                    var Aanval = new Gooier_Aanval(locatie);
+                    var Aanval = new Gooier_Aanval(locatie, game);
                     Aanval.setMotion(3, y);
                     addEntity(Aanval);
                 }

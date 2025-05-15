@@ -104,7 +104,7 @@ public class Boss_Room extends Room implements KeyListener, MouseMovedListener, 
 
     public void boss_attack() {
         if(!Normal_Room.enemiesList.isEmpty()){
-        var fireball = new Boss_Projectile(new Coordinate2D(Math.random() * 960, Math.random() * 720));
+        var fireball = new Boss_Projectile(new Coordinate2D(Math.random() * 960, Math.random() * 720), game);
         addEntity(fireball);
         }
     }

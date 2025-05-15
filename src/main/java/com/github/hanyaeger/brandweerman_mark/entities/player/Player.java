@@ -28,7 +28,7 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
     public boolean mousepressed;
     public static Coordinate2D currentcoords;
     public Coordinate2D coordinate;
-    private boolean isLevend = false;
+    public static boolean isLevend = false;
     private int damage;
 
     public Player(Coordinate2D coordinate, YaegerGame game) {
@@ -120,7 +120,7 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
 
     @Override
     public void onCollision(List<Collider> list) {
-        if (list.get(0) instanceof Enemy || list.get(0) instanceof Gooier_Aanval) {
+        if (list.get(0) instanceof Enemy) {
             Player.hp--;
             System.out.println("hp-1");
             if(hp <= 0){

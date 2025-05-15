@@ -32,7 +32,7 @@ import java.util.Random;
         }
 
         public void Aanval(Coordinate2D target) {
-           var Gooier_Aanval= new Gooier_Aanval(this.coordinate);
+           var Gooier_Aanval= new Gooier_Aanval(this.coordinate, game);
             Normal_Room.Aanvallist.add(Gooier_Aanval);
         }
 
