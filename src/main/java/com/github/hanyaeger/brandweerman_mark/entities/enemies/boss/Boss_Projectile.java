@@ -5,13 +5,10 @@ import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
-import com.github.hanyaeger.brandweerman_mark.Game;
-import com.github.hanyaeger.brandweerman_mark.entities.enemies.Enemy;
 import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
-
 import java.util.List;
+import static com.github.hanyaeger.brandweerman_mark.entities.player.Player.hp;
 
-import static com.github.hanyaeger.brandweerman_mark.entities.player.Player.hp;;
 public class Boss_Projectile extends DynamicSpriteEntity implements Collider, Collided {
     private final YaegerGame game;
 
@@ -23,9 +20,8 @@ public class Boss_Projectile extends DynamicSpriteEntity implements Collider, Co
 
     @Override
     public void onCollision(List<Collider> list) {
-        if (list.get(0) instanceof Player) {
+        if (list.getFirst() instanceof Player) {
             hp--;
-            System.out.println("hp-1");
             if(hp <= 0){
                 Player.isLevend = false;
 

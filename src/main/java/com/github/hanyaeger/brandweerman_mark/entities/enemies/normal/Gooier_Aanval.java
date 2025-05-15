@@ -5,17 +5,12 @@ import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
-import com.github.hanyaeger.api.userinput.MouseMovedListener;
 import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
-
 import java.util.List;
-
 import static com.github.hanyaeger.brandweerman_mark.entities.player.Player.hp;
 
 public class Gooier_Aanval extends DynamicSpriteEntity implements Collider, Collided {
     private YaegerGame game;
-    private double speed = 10;
-
 
     public Gooier_Aanval(Coordinate2D position, YaegerGame game) {
         super("enemy_sprites/bullet.png", position);
@@ -34,6 +29,4 @@ public class Gooier_Aanval extends DynamicSpriteEntity implements Collider, Coll
             }
         }
     }
-
-
 }

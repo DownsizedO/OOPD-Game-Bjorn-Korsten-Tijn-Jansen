@@ -7,14 +7,13 @@ import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
 import com.github.hanyaeger.api.userinput.MouseButtonReleasedListener;
-import com.github.hanyaeger.api.userinput.MouseMovedListener;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.MouseButton;
 
 import java.util.Set;
 
 
-public class Water_Gun extends DynamicSpriteEntity implements MouseButtonPressedListener, MouseButtonReleasedListener, KeyListener, SceneBorderTouchingWatcher, MouseMovedListener {
+public class Water_Gun extends DynamicSpriteEntity implements MouseButtonPressedListener, MouseButtonReleasedListener, KeyListener, SceneBorderTouchingWatcher {
 
     private YaegerGame game;
     private Coordinate2D coordinate;
@@ -23,17 +22,9 @@ public class Water_Gun extends DynamicSpriteEntity implements MouseButtonPressed
 
 
     public Water_Gun(Coordinate2D position, YaegerGame game) {
-        super("player_sprites/watergun.png", position); // Zet hier de juiste sprite voor de watergun
+        super("player_sprites/watergun.png", position);
         this.game = game;
         this.coordinate = position;
-    }
-
-    public Coordinate2D GunCoords(){
-       return getLocationInScene();
-    }
-
-    public static boolean isGeschoten() {
-        return geschoten;
     }
 
     @Override
@@ -105,9 +96,5 @@ public class Water_Gun extends DynamicSpriteEntity implements MouseButtonPressed
             default:
                 break;
         }
-    }
-    @Override
-    public void onMouseMoved(Coordinate2D coordinate2D) {
-
     }
 }

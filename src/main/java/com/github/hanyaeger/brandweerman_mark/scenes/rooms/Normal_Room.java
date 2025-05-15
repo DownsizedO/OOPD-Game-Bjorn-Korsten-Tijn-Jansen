@@ -1,25 +1,19 @@
 package com.github.hanyaeger.brandweerman_mark.scenes.rooms;
 
 import com.github.hanyaeger.brandweerman_mark.Game;
-import com.github.hanyaeger.brandweerman_mark.entities.Entity;
 import com.github.hanyaeger.brandweerman_mark.entities.enemies.Enemy;
 import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Gooier_Aanval;
 import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Vuur_Gooier;
 import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
-import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream;
 import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.Water_Gun;
 import com.github.hanyaeger.api.YaegerGame;
-import com.github.hanyaeger.api.entities.impl.TextEntity;
 import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.userinput.KeyListener;
 import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
 import com.github.hanyaeger.api.userinput.MouseMovedListener;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.MouseButton;
 import javafx.scene.paint.Color;
 import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Vuur_Sprite;
-import javafx.scene.shape.MoveTo;
-
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Set;
@@ -27,7 +21,6 @@ import java.util.Set;
 
 public class Normal_Room extends Room implements KeyListener, MouseMovedListener, MouseButtonPressedListener {
 
-    private TextEntity player;
     private YaegerGame game;
     private int enemy_aantal;
     Random random = new Random();
@@ -35,7 +28,6 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
     Random random2 = new Random();
     Random random3 = new Random();
     private int direction;
-    public Water_Gun water_gun;
     long vorigeTijd;
     long interval = 1000;
     public static ArrayList<Gooier_Aanval> Aanvallist = new ArrayList<Gooier_Aanval>();
@@ -44,8 +36,6 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
     public Normal_Room(Game game, int enemy_aantal) {
         this.enemy_aantal = enemy_aantal;
         this.game = game;
-
-
     }
 
     @Override
@@ -53,7 +43,6 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
         setBackgroundColor(Color.LIGHTGREEN);
         setBackgroundImage("backgrounds/normal_room.png");
         direction = random1.nextInt(300);
-
     }
 
     @Override
@@ -64,10 +53,7 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
         addEntity(water_gun);
         var door = new Door(new Coordinate2D(getWidth() - 20, getHeight() / 2), game);
         addEntity(door);
-        //TextEntity titel = new TextEntity(new Coordinate2D(getWidth()/2, getHeight()-50), toString(Player.hp));
         spawnEnemies(enemy_aantal);
-
-
     }
 
     private void spawnEnemies(int enemyCount) {
@@ -76,14 +62,13 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
             int randomDirection = new Random().nextInt(3);
             Coordinate2D spawnPosition = new Coordinate2D(Math.random() * 960, Math.random() * 720);
             if (randomDirection == 1) {
-                enemy = new Vuur_Sprite(spawnPosition, 10, 10, game);
+                enemy = new Vuur_Sprite(spawnPosition);
             }
             if (randomDirection == 2) {
-                enemy = new Vuur_Gooier(spawnPosition, 10, 10, game, this);
-            } else enemy = new Vuur_Sprite(spawnPosition, 10, 10, game);
+                enemy = new Vuur_Gooier(spawnPosition, game, this);
+            } else enemy = new Vuur_Sprite(spawnPosition);
             Room.enemiesList.add(enemy);
             addEntity(enemy);
-            System.out.println(Room.enemiesList);
         }
     }
 
@@ -103,20 +88,13 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
 
 
     @Override
-    public void onMouseButtonPressed() {
-
-    }
-
-    @Override
     public void onMouseMoved(Coordinate2D coordinate2D) {
-        System.out.println("mousemoved");
         for (int i = 0; i < Room.enemiesList.size(); i++) {
             Room.enemiesList.get(i).setMotion(3, direction);
         }
         long nu = System.currentTimeMillis();
         if (nu - vorigeTijd >= interval) {
             vorigeTijd = nu;
-            System.out.println("Komt door de if statement heen");
             for (Enemy enemy : Normal_Room.enemiesList) {
                 if (enemy instanceof Vuur_Gooier vuurGooier) {
                     float y = random.nextFloat() * 360;
@@ -126,7 +104,6 @@ public class Normal_Room extends Room implements KeyListener, MouseMovedListener
                     addEntity(Aanval);
                 }
             }
-
         }
     }
 }

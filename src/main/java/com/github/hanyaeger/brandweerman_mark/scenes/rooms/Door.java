@@ -6,14 +6,12 @@ import com.github.hanyaeger.api.Coordinate2D;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.brandweerman_mark.Game;
-
+import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
 import java.util.List;
-
 
 public class Door extends DynamicSpriteEntity implements Collider, Collided {
 
     private YaegerGame game;
-    private static int kamernr = 1;
     public Door(Coordinate2D position, YaegerGame game) {
         super("rooms/door.png", position);
         this.game = game;
@@ -53,11 +51,11 @@ public class Door extends DynamicSpriteEntity implements Collider, Collided {
 
     @Override
     public void onCollision(List<Collider> list) {
-        if(Normal_Room.enemiesList.isEmpty())
-        {
-            goToNextRoom();
+        if (list.getFirst() instanceof Player) {
+            if(Normal_Room.enemiesList.isEmpty()) {
+                goToNextRoom();
+            }
         }
-
     }
 }
 

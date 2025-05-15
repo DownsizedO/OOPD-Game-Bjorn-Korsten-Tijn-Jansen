@@ -8,12 +8,12 @@ public class Eindscherm extends Scherm {
     private YaegerGame game;
 
     public Eindscherm(YaegerGame game) {
-        super(game);
         this.game = game;
     }
     @Override
     public void setupEntities() {
-        ExitButton exitButton = new ExitButton(new Coordinate2D(100, 100), game, "afsluiten");
+        ExitButton exitButton = new ExitButton(new Coordinate2D(100, 100), game, "Opnieuw spelen");
         addEntity(exitButton);
     }
 }
+

@@ -8,15 +8,8 @@ import com.github.hanyaeger.brandweerman_mark.entities.enemies.Enemy;
 
 public class Lava_Monster extends Enemy implements SceneBorderTouchingWatcher, Collider, Collided {
 
-    public Lava_Monster(int hp, int damage, Coordinate2D location) {
+    public Lava_Monster(Coordinate2D location) {
         super(1000, 5, "enemy_sprites/lava_monster.png", location);
-    }
-
-
-    public void boss_attack()
-    {
-
-
     }
 }
 

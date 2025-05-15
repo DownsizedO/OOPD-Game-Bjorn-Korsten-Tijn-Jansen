@@ -7,7 +7,7 @@ import javafx.scene.input.MouseButton;
 public class StartButton extends Button  {
     private YaegerGame game;
     public StartButton(Coordinate2D position, YaegerGame game, String text) {
-        super(position, game, text);
+        super(position, text);
         this.game = game;
     }
 

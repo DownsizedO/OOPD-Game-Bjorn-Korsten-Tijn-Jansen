@@ -4,16 +4,11 @@ import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.Coordinate2D;
-import com.github.hanyaeger.api.userinput.MouseButtonPressedListener;
-import com.github.hanyaeger.api.userinput.MouseMovedListener;
 import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
-import javafx.scene.input.MouseButton;
 
 public class WaterStream extends DynamicSpriteEntity implements Collider {
-    //, MouseMovedListener
     private YaegerGame game;
     private double speed = 10;
-
 
     public WaterStream(Coordinate2D position, Coordinate2D coordinate) {
         super("player_sprites/bullet.png", position);
@@ -28,5 +23,4 @@ public class WaterStream extends DynamicSpriteEntity implements Collider {
         }
         setMotion(speed, angle);
     }
-
 }

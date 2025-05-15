@@ -11,11 +11,10 @@ import javafx.scene.text.FontWeight;
 
 public class Button extends TextEntity implements MouseButtonPressedListener {
 
-    private YaegerGame game;
 
-    public Button(Coordinate2D position, YaegerGame game2, String text) {
+
+    public Button(Coordinate2D position, String text) {
         super(position, text);
-        this.game = game;
         setFill(Color.DARKBLUE);
         setFont(Font.font("Arial", FontWeight.BOLD, 24));
 

@@ -1,14 +1,11 @@
 package com.github.hanyaeger.brandweerman_mark.scenes.menus;
 
-import com.github.hanyaeger.api.YaegerGame;
+
 import com.github.hanyaeger.api.scenes.StaticScene;
 
 public class Scherm extends StaticScene {
-    private boolean game_started = false;
-    private YaegerGame game;
 
-    public Scherm(YaegerGame game) {
-        this.game = game;
+    public Scherm() {
     }
 
     @Override
@@ -18,8 +15,5 @@ public class Scherm extends StaticScene {
 
     @Override
     public void setupEntities() {
-
-
-
     }
 }

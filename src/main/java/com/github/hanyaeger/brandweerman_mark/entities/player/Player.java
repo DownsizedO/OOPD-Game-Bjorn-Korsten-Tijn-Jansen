@@ -1,9 +1,6 @@
 package com.github.hanyaeger.brandweerman_mark.entities.player;
 
 import com.github.hanyaeger.brandweerman_mark.entities.enemies.Enemy;
-import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Gooier_Aanval;
-import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Vuur_Gooier;
-import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Vuur_Sprite;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
@@ -29,13 +26,12 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
     public static Coordinate2D currentcoords;
     public Coordinate2D coordinate;
     public static boolean isLevend = false;
-    private int damage;
 
     public Player(Coordinate2D coordinate, YaegerGame game) {
         super("player_sprites/brandweerman_mark.png", coordinate);
-        this.currentcoords = coordinate;
+        currentcoords = coordinate;
         this.game = game;
-        this.hp = 10;
+        hp = 10;
     }
 
     @Override
@@ -44,26 +40,21 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
         currentcoords = getLocationInScene();
 
         if(pressedKeys.contains(KeyCode.A) || pressedKeys.contains(KeyCode.LEFT)){
-            if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP))
-            {
+            if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP)) {
                 setMotion(Movement_Speed, 225d);
-            }else if(pressedKeys.contains(KeyCode.S) || pressedKeys.contains(KeyCode.DOWN))
-            {
+            }else if(pressedKeys.contains(KeyCode.S) || pressedKeys.contains(KeyCode.DOWN)) {
                 setMotion(Movement_Speed, 315);
 
             }else{setMotion(Movement_Speed, 270d);}
-        } else if(pressedKeys.contains(KeyCode.D) || pressedKeys.contains(KeyCode.RIGHT))
-        {
-            if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP))
-            {
+        } else if(pressedKeys.contains(KeyCode.D) || pressedKeys.contains(KeyCode.RIGHT)) {
+            if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP)) {
                 setMotion(Movement_Speed, 135);
             }else if(pressedKeys.contains(KeyCode.S) || pressedKeys.contains(KeyCode.DOWN)){
                 setMotion(Movement_Speed, 45);
             }
             else{
                 setMotion(Movement_Speed,90d);
-            }} else if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP))
-        {
+            }} else if(pressedKeys.contains(KeyCode.W) || pressedKeys.contains(KeyCode.UP)) {
             setMotion(Movement_Speed,180d);
         } else if(pressedKeys.contains(KeyCode.S) || pressedKeys.contains(KeyCode.DOWN)){
             setMotion(Movement_Speed,0d);
@@ -71,10 +62,6 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
         else if(pressedKeys.isEmpty()){
             setSpeed(0);
         }
-        if (pressedKeys.contains(KeyCode.SPACE)) {
-            Coordinate2D start = coordinate;
-        }
-
     }
 
 
@@ -101,7 +88,6 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
             default:
                 break;
         }
-
     }
 
     public Coordinate2D playerCoords(){
@@ -110,7 +96,6 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
 
     @Override
     public void onMouseMoved(Coordinate2D coordinate2D) {
-
     }
 
     @Override
@@ -122,31 +107,10 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
     public void onCollision(List<Collider> list) {
         if (list.get(0) instanceof Enemy) {
             Player.hp--;
-            System.out.println("hp-1");
             if(hp <= 0){
                 isLevend = false;
                 game.setActiveScene(100);
             }
         }
-    }
-
-
-    @Override
-    public void Neem_Schade(int schade) {
-        hp -= schade;
-    }
-
-    @Override
-    public int getHp() {
-        return hp;
-    }
-
-    @Override
-    public int getDamage() {
-        return damage;
-    }
-
-    public boolean getisLevend(){
-        return isLevend;
     }
 }
