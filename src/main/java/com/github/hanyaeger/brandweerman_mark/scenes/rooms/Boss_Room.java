@@ -1,6 +1,7 @@
 package com.github.hanyaeger.brandweerman_mark.scenes.rooms;
 
 import com.github.hanyaeger.brandweerman_mark.Game;
+import com.github.hanyaeger.brandweerman_mark.entities.enemies.boss.Boss_Projectile;
 import com.github.hanyaeger.brandweerman_mark.entities.enemies.boss.Lava_Monster;
 import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
 import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.Water_Gun;
@@ -31,10 +32,11 @@ public class Boss_Room extends Room implements KeyListener, MouseMovedListener, 
         this.enemy_aantal = enemy_aantal;
         this.game = game;
     }
+
     @Override
     public void setupScene() {
         setBackgroundColor(Color.LIGHTGREEN);
-        setBackgroundImage("backgrounds/normal_room.png");
+        setBackgroundImage("rooms/bosser_room.png");
         direction = random1.nextInt(300);
 
     }
@@ -92,6 +94,16 @@ public class Boss_Room extends Room implements KeyListener, MouseMovedListener, 
         spawnEnemies(enemy_aantal);
 
 
+    }
+
+
+    public void boss_attack()
+    {
+        for(int i = 1; i < 4; i++)
+        {
+            var fireball = new Boss_Projectile("enemy_sprites/fireball.png", new Coordinate2D(getWidth()/i,0));
+            addEntity(fireball);
+        }
     }
 }
 

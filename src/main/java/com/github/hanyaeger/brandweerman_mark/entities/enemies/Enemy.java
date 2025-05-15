@@ -1,16 +1,20 @@
 package com.github.hanyaeger.brandweerman_mark.entities.enemies;
 import com.github.hanyaeger.api.Coordinate2D;
+import com.github.hanyaeger.api.UpdateExposer;
 import com.github.hanyaeger.api.entities.Collided;
 import com.github.hanyaeger.api.entities.Collider;
 import com.github.hanyaeger.api.entities.impl.DynamicSpriteEntity;
 import com.github.hanyaeger.api.scenes.SceneBorder;
 import com.github.hanyaeger.brandweerman_mark.Game;
 import com.github.hanyaeger.brandweerman_mark.entities.Entity;
+import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
 import com.github.hanyaeger.brandweerman_mark.entities.player.water_gun.WaterStream;
 import com.github.hanyaeger.brandweerman_mark.scenes.rooms.Room;
 
+
 import java.util.List;
 import java.util.Random;
+
 
 public abstract class Enemy extends DynamicSpriteEntity implements Entity, Collided {
 
@@ -73,11 +77,13 @@ public abstract class Enemy extends DynamicSpriteEntity implements Entity, Colli
     }
 
     public void beweeg() {
-        int timer = 1000;
-        if (timer <= 1) {;
-            setMotion(3, random.nextInt(359));
-            timer = 1000;
-        } else timer--;
+//        int timer = 1000;
+//        if (timer <= 1) {;
+//            setMotion(3, random.nextInt(359));
+//            timer = 1000;
+//        } else timer--;
+
+        setMotion(3, angleTo(Player.currentcoords));
     }
     @Override
     public void onCollision(List<Collider> collisions) {
@@ -86,7 +92,7 @@ public abstract class Enemy extends DynamicSpriteEntity implements Entity, Colli
             collisions.forEach(collider -> {
                 if (collider instanceof WaterStream) {
 
-                    hp = hp - 100;
+                    hp = hp - 10;
                     setMotion(10, random.nextInt(359));
                     System.out.println("enemy collided with bullet");
                     if (hp <= 0) {
@@ -94,7 +100,7 @@ public abstract class Enemy extends DynamicSpriteEntity implements Entity, Colli
                         remove();
 
                     }
-                    remove();//---------------------------------------
+
                 }
             });
         } else {
@@ -108,4 +114,8 @@ public abstract class Enemy extends DynamicSpriteEntity implements Entity, Colli
     public void checkForCollisions(List<Collider> colliders) {
         Collided.super.checkForCollisions(colliders);
     }
+
+
 }
+
+

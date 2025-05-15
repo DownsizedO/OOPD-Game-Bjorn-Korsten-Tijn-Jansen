@@ -25,7 +25,7 @@ import java.util.Random;
         private YaegerGame game;
         DynamicScene scene;
         public Vuur_Gooier(Coordinate2D coordinate, int hp, int dmg, YaegerGame game, DynamicScene scene) {
-            super(1, 1,"enemy_sprites/firesprite.png", coordinate );
+            super(1, 1,"enemy_sprites/vlammen_werper.png", coordinate );
             this.coordinate = coordinate;
             this.game = game;
             this.scene = scene;

@@ -1,6 +1,7 @@
 package com.github.hanyaeger.brandweerman_mark.scenes.rooms;
 
 
+import com.github.hanyaeger.api.UpdateExposer;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.scenes.DynamicScene;
 import com.github.hanyaeger.api.Coordinate2D;
@@ -10,6 +11,8 @@ import javafx.scene.input.MouseButton;
 
 import com.github.hanyaeger.brandweerman_mark.entities.enemies.Enemy;
 import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
+
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,6 +66,9 @@ public abstract class Room extends DynamicScene implements MouseButtonPressedLis
         Coordinate2D muisPositie = coordinate;
         var waterstream = new WaterStream(Player.currentcoords, coordinate );
         addEntity(waterstream);
+
+
     }
+
 
 }

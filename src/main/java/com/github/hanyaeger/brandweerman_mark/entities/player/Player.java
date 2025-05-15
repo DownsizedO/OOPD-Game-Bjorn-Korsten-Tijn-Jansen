@@ -1,5 +1,8 @@
 package com.github.hanyaeger.brandweerman_mark.entities.player;
 
+import com.github.hanyaeger.brandweerman_mark.entities.enemies.Enemy;
+import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Gooier_Aanval;
+import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Vuur_Gooier;
 import com.github.hanyaeger.brandweerman_mark.entities.enemies.normal.Vuur_Sprite;
 import com.github.hanyaeger.api.YaegerGame;
 import com.github.hanyaeger.api.entities.Collided;
@@ -117,7 +120,7 @@ public class Player extends DynamicSpriteEntity implements Entity, KeyListener, 
 
     @Override
     public void onCollision(List<Collider> list) {
-        if (list.get(0) instanceof Vuur_Sprite) {
+        if (list.get(0) instanceof Enemy || list.get(0) instanceof Gooier_Aanval) {
             Player.hp--;
             System.out.println("hp-1");
             if(hp <= 0){

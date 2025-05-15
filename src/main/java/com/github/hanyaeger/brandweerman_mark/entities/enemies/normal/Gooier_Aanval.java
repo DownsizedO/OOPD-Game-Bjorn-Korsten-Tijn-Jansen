@@ -13,9 +13,9 @@ public class Gooier_Aanval extends DynamicSpriteEntity implements Collider  {
 
 
     public Gooier_Aanval(Coordinate2D position) {
-        super("player_sprites/bullet.png", position);
+        super("enemy_sprites/bullet.png", position);
         this.game = game;
-        setMotion(3, angleTo(Player.currentcoords));
+        setMotion(5, angleTo(Player.currentcoords));
     }
 
 

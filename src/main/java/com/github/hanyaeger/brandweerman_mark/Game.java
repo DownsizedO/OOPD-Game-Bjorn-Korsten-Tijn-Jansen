@@ -11,7 +11,7 @@ import com.github.hanyaeger.brandweerman_mark.entities.player.Player;
 
 import java.util.List;
 
-public class Game extends YaegerGame {
+public class Game extends YaegerGame{
 
     private Startscherm startScreen;
     private Eindscherm endScreen;
@@ -47,7 +47,8 @@ public class Game extends YaegerGame {
         addScene(2, new Normal_Room(this, 5));  // Normale kamer 2
         addScene(3, new Normal_Room(this,7));  // Normale kamer 3
         addScene(4, new Normal_Room(this, 9));  // Normale kamer 4
-         addScene(100, endScreen);
+        addScene(5, new Boss_Room(this, 1));
+        addScene(100, endScreen);
     }
 
     public Player getPlayer() {
