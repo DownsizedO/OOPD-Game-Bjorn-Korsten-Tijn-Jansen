@@ -68,14 +68,19 @@ public class Boss_Room extends Room implements KeyListener, MouseMovedListener, 
             Room.enemiesList.get(i).setMotion(3, direction);
         }
     }
-
+    long vorigeTijd;
     @Override
     public void onMouseMoved(Coordinate2D coordinate2D) {
         for(int i = 0; i < Room.enemiesList.size();i++){
             Room.enemiesList.get(i).setMotion(3, direction);
         }
+        long nu = System.currentTimeMillis();
 
-
+        long interval = 1000;
+        if (nu - vorigeTijd >= interval) {
+            vorigeTijd = nu;
+            boss_attack();
+        }
     }
 
     @Override
@@ -97,12 +102,10 @@ public class Boss_Room extends Room implements KeyListener, MouseMovedListener, 
     }
 
 
-    public void boss_attack()
-    {
-        for(int i = 1; i < 4; i++)
-        {
-            var fireball = new Boss_Projectile("enemy_sprites/fireball.png", new Coordinate2D(getWidth()/i,0));
-            addEntity(fireball);
+    public void boss_attack() {
+        if(!Normal_Room.enemiesList.isEmpty()){
+        var fireball = new Boss_Projectile(new Coordinate2D(Math.random() * 960, Math.random() * 720));
+        addEntity(fireball);
         }
     }
 }
